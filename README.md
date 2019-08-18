@@ -1,0 +1,2 @@
+# qReader
+qml Reader App
