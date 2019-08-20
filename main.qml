@@ -1,9 +1,11 @@
 import QtQuick 2.12
 import QtQuick.Window 2.12
-
+import QtQuick.Controls 2.0
+import QtQuick.Layouts 1.0
+import "./Item"
 Window {
     visible: true
-    width: 640
+    width: 400
     height: 480
     title: qsTr("Hello World")
     ListView{
@@ -11,17 +13,10 @@ Window {
         width: parent.width;
         height: parent.height;
         model:$Model;
-        delegate: Rectangle{
-        width: parent.width;
-        height: 40;
-        color: "red";
-        border.color: "black"
-        anchors.margins: 2
-        Text {
-            anchors.fill: parent;
-            id: name
-            text: poem_title
+        delegate:  ListItem{
+
         }
     }
-    }
+
 }
+
