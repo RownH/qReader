@@ -145,7 +145,11 @@ Rectangle {
                         }
                         border.color: "#B0C4DE";
                     }
+                    Rectangle{
+                        width: 100;
+                        height: 30;
 
+                    }
                     Rectangle{
                         width: 80
                         height: 30
@@ -166,7 +170,5 @@ Rectangle {
             }
         }
     }
-    Component.onCompleted: {
 
-    }
 }
