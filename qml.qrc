@@ -4,5 +4,7 @@
         <file>Item/ListItem.qml</file>
         <file>Item/BookItem.qml</file>
         <file>Item/testItem.qml</file>
+        <file>ReaderView.qml</file>
+        <file>View/ReaderView.qml</file>
     </qresource>
 </RCC>
