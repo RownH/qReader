@@ -1,5 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.5
+import QtQuick.Layouts 1.3
+import "../Item"
 Rectangle{
     id:root;
     width: 400;
@@ -137,9 +139,92 @@ Rectangle{
         width: parent.width;
         height: 100;
         visible: view.isSetting;
-        z:4
-        opacity: 0
-        color: "#BC8F8F"
+
+        color: "#BC8F8F";
+
+
+            RowLayout{
+                id:process;
+                height: 50;
+                anchors.top: parent.top;
+                anchors.left: parent.left;
+                anchors.leftMargin: 20;
+                anchors.right: parent.right;
+                anchors.rightMargin: 20;
+                Rectangle{
+                    width: 50;
+                    height: 20;
+                    color: "transparent"
+                    Text {
+                        color: fontcolor
+                        text: qsTr("上一章")
+                    }
+
+                }
+                Rectangle{
+                    height: 50;
+                    width: 200;
+                    color: "transparent"
+                    Slider{
+                        width: parent.width;
+                        from:0;
+                        to:100;
+                        stepSize:1
+
+                    }
+                }
+                Rectangle{
+                    width: 50;
+                    height: 20;
+                    color: "transparent"
+                    Text {
+                        color: fontcolor
+                        text: qsTr("下一章")
+                    }
+                }
+        }
+        RowLayout{
+            anchors.bottom: parent.bottom;
+            anchors.bottomMargin: 10;
+            anchors.left: parent.left;
+            anchors.leftMargin: 40;
+            anchors.right: parent.right;
+            anchors.rightMargin: 40;
+            height: 40;
+            // spacing:10;
+            SettingButton{
+                id:catalog;
+                width: 30;
+                height: 40;
+                buttonText :qsTr("目录")
+                buttonIconPath:"../Images/catalog.png";
+                buttonBackColor: "transparent";
+            }
+            SettingButton{
+                id:brightness
+                width: 30;
+                height: 40;
+                buttonText: qsTr("亮度")
+                buttonIconPath: "../Images/brightness.png"
+                buttonBackColor: "transparent"
+            }
+            SettingButton{
+                id:nightModel
+                width: 30;
+                height: 40;
+                buttonText: qsTr("夜间")
+                buttonIconPath: "../Images/nightmodel.png"
+                buttonBackColor: "transparent"
+            }
+            SettingButton{
+                id:set;
+                width: 30;
+                height: 40;
+                buttonText: qsTr("设置")
+                buttonIconPath: "../Images/set.png"
+                buttonBackColor: "transparent"
+            }
+        }
         ParallelAnimation{
             id:showFoot;
             PropertyAnimation{
