@@ -1,7 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.0
 Rectangle{
-    id:root;
+    id:root1;
     width: 400;
     height: 600;
     property var backColor:"black";
@@ -9,6 +9,9 @@ Rectangle{
     property var name:"title"
     property var borderParent:"1";
     color: backColor;
+    Component.onCompleted: {
+        console.log(label.x,thought.x,catalogs.x,borderBottom.x)
+    }
     Rectangle {
         id: rectangle
         anchors.top: parent.top;
@@ -41,6 +44,7 @@ Rectangle{
         width: parent.width;
         height: 60
         RowLayout{
+            id:row;
             anchors.top: parent.top;
             anchors.bottom: parent.bottom;
             anchors.right: parent.right;
@@ -63,7 +67,7 @@ Rectangle{
                 MouseArea{
                     anchors.fill: parent;
                     onClicked: {
-                       borderBottom.parent=label;
+                       borderBottom.state="label";
                     }
 
                 }
@@ -83,7 +87,7 @@ Rectangle{
                 MouseArea{
                          anchors.fill: parent;
                          onClicked: {
-                            borderBottom.parent=thought;
+                             borderBottom.state="thoughts"
                          }
 
                  }
@@ -105,7 +109,8 @@ Rectangle{
                 MouseArea{
                          anchors.fill: parent;
                          onClicked: {
-                            borderBottom.parent=catalogs;
+                            //borderBottom.parent=catalogs;
+                            borderBottom.state="catalogs";
                          }
 
                  }
@@ -127,33 +132,45 @@ Rectangle{
         height: 3
         radius: 2
         color: "#FF4500"
-    }
-    states: [
-        State {
-            name: "label"
-            ParentChange{
-                target: borderBottom;
-                parent: label;
+
+        states: [
+                State {
+                    name: "label"
+                    ParentChange{
+                        target: borderBottom;
+                        parent: label;
+                        width: label.width;
+                        x:0;
+                    }
+                    PropertyChanges {
+                        target: borderBottom;
+                     }
+                },
+                State{
+                    name: "thoughts"
+                    ParentChange{
+                        target: borderBottom;
+                        parent: thought;
+                        width: thought.width;
+                        x:0;
+
+                    }
+                },
+                State {
+                    name: "catalogs"
+                    ParentChange{
+                        target: borderBottom;
+                        parent: catalogs;
+                        width: catalogs.width;
+                        x:0
+                    }
+                }
+        ]
+        transitions: Transition {
+            ParentAnimation {
+                 NumberAnimation { properties: "x,y"; duration: 1000 }
 
             }
-        },
-        State {
-            name: "thoughts"
-            ParentChange{
-                target: borderBottom;
-                parent: thought;
-
-            }
-        },
-        State {
-            name: "catalogs"
-            ParentChange{
-                target: borderBottom;
-                parent: ;
-
-            }
-        }
-
-
-    ]
+         }
+  }
 }
