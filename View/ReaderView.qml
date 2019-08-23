@@ -5,10 +5,11 @@ import "../Item"
 Rectangle{
     id:root;
     width: 400;
-    height: 480;
-    property var backcolor:"black";
-    property var fontcolor: "white";
+    height: 600;
+    property var backcolor:"#FFE4B5";
+    property var fontcolor: "black";
     property var fontSize: 15;
+    property var footColor: "black"
     Rectangle{
         id:fonter;
         width: parent.width;
@@ -26,9 +27,9 @@ Rectangle{
     }
     Rectangle{
         width: 400;
-        height: 470;
+        height: parent.height-footer.height-fonter.height;
         anchors.top: fonter.bottom;
-        color: "black"
+        color: backcolor
         Flickable {
 
             id: view
@@ -36,17 +37,18 @@ Rectangle{
             contentHeight: readerText.height;
             width: parent.width;
             height: parent.height;
+
             property var isSetting: 0
             //y:mouse.y-contentY
             Rectangle{
                 width: parent.width;
                 height: parent.height;
-                color: "black";
+                color: "transparent";
                 TextArea {
                     id:readerText;
                     width: parent.width
                     readOnly: true;
-                    color: "white";
+                    color: fontcolor;
                     text: "TextArea\n...\n...\n...\n...\n...\n...\n\n...\n...\n...\n...\n...\n...\n\n...\n...\n...\n...\n...\n...\n\n...\n...\n...\n...\n...\n...\n\n...\n...\n...\n...\n...\n...\n\n...\n...\n...\n...\n...\n...\n\n...\n...\n...\n...\n...\n...\n"
                     wrapMode: Text.WrapAnywhere
                     onTextChanged: {
@@ -79,7 +81,7 @@ Rectangle{
         color: backcolor;
         anchors.bottom: root.bottom;
         Text {
-            color: fontcolor;
+            color:backcolor;
             anchors.left: parent.left;
             height: parent.height
             anchors.leftMargin: 5;
@@ -107,12 +109,97 @@ Rectangle{
     Rectangle{
         id:fontSetter;
         width: parent.width;
-        height: 30;
+        height: 40;
         visible: view.isSetting;
         opacity: 0.9
         z:4;
         //anchors.top: parent.top;
-        color: "#BC8F8F"
+        color: footColor
+        Rectangle{
+            width: parent.width-anchors.rightMargin-anchors.leftMargin;
+            height: parent.height-anchors.topMargin-anchors.bottomMargin;
+            anchors.top: parent.top;
+            anchors.right: parent.right;
+            anchors.left: parent.left;
+            anchors.bottom: parent.bottom;
+            anchors.bottomMargin: 10;
+            anchors.topMargin: 10;
+            anchors.rightMargin: 20;
+            anchors.leftMargin: 20;
+            color: "transparent";
+            RowLayout{
+                width: parent.width;
+                height: parent.height;
+                anchors.fill: parent;
+                //左键头 表示返回
+                Rectangle{
+                    height: parent.height;
+                    width: 20;
+                    color: "transparent"
+                    Image {
+                        anchors.fill: parent;
+                        source: "../Images/back.png"
+                    }
+
+
+                }
+                Rectangle{
+                    width: 100;
+                    height: parent.height;
+                    color: "transparent";
+
+
+                }
+                Rectangle{
+                    id:buyButton;
+                    height: parent.height;
+                    width: 40;
+                    radius: 8;
+                    color: "transparent"
+                    Text {
+                        anchors.fill: parent;
+                        text: qsTr("购买")
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter;
+                        color: "#FF4500"
+                        font.pixelSize: 10;
+                    }
+                    border.color: "#FF4500"
+
+                }
+                Rectangle{
+                    id:giftButton;
+                       width: 25;
+                       height: parent.height;
+                       color: "transparent";
+                       Image {
+                           anchors.fill: parent;
+                           source: "../Images/giftButton.png"
+                       }
+                }
+                Rectangle{
+                    id:headsetButton;
+                       width: 25;
+                       height: parent.height;
+                       color: "transparent";
+                       Image {
+                           anchors.fill: parent;
+                           source: "../Images/HeadsetButton.png"
+                       }
+                }
+                Rectangle{
+                    id:listButton;
+                       width: 25;
+                       height: parent.height;
+                       color: "transparent";
+                       Image {
+                           anchors.fill: parent;
+                           source: "../Images/listButton.png"
+                       }
+                }
+            }
+
+        }
         ParallelAnimation{
             id: showFont;
             PropertyAnimation{
@@ -140,7 +227,7 @@ Rectangle{
         height: 100;
         visible: view.isSetting;
 
-        color: "#BC8F8F";
+        color: footColor;
 
 
             RowLayout{
@@ -156,8 +243,9 @@ Rectangle{
                     height: 20;
                     color: "transparent"
                     Text {
-                        color: fontcolor
+                        color: "white"
                         text: qsTr("上一章")
+
                     }
 
                 }
@@ -178,7 +266,7 @@ Rectangle{
                     height: 20;
                     color: "transparent"
                     Text {
-                        color: fontcolor
+                        color:"white"
                         text: qsTr("下一章")
                     }
                 }
