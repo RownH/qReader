@@ -59,7 +59,10 @@ Rectangle{
                         anchors.fill: parent;
                         onClicked: {
                             console.log(view.isSetting);
-                            if(view.isSetting==0&& mouseX>width/2-width/5*1 && mouseX< width/2+width/5*1){
+                            if(footSetter.isBrightNess==1 && mouseY%parent.height<root.height-showBrightNess.height){
+                                    footSetter.isBrightNess=0;
+                            }
+                            else if(view.isSetting==0&& mouseX>width/2-width/5*1 && mouseX< width/2+width/5*1){
                                     view.isSetting=1;
                                     showFont.start();
                                     showFoot.start();
@@ -70,6 +73,7 @@ Rectangle{
                             else if(footSetter.isCatalogView==1 && mouseX>showCatalogs.width){
                                     footSetter.isCatalogView=0;
                             }
+
 
                         }
                     }
@@ -230,7 +234,9 @@ Rectangle{
         visible: view.isSetting;
         color: footColor;
         property var isCatalogView: 0       //目录是否显示
-            RowLayout{
+        property var isBrightNess: 0
+        property var isNeight: 0
+        RowLayout{
                 id:process;
                 height: 50;
                 anchors.top: parent.top;
@@ -304,6 +310,16 @@ Rectangle{
                 buttonText: qsTr("亮度")
                 buttonIconPath: "../Images/brightness.png"
                 buttonBackColor: "transparent"
+                MouseArea{
+                    anchors.fill: parent;
+                    onClicked: {
+                        showBrightNessAnimation.start();
+                        footSetter.isBrightNess=1;
+                        view.isSetting=0;
+
+                    }
+
+                }
             }
             SettingButton{
                 id:nightModel
@@ -312,6 +328,15 @@ Rectangle{
                 buttonText: qsTr("夜间")
                 buttonIconPath: "../Images/nightmodel.png"
                 buttonBackColor: "transparent"
+                MouseArea{
+                    anchors.fill: parent;
+                    onClicked: {
+                        footSetter.isNeight=!footSetter.isNeight;
+                        nightModel.buttonIconPath=footSetter.isNeight?"../Images/nightmodel.png":"../Images/brightness.png"
+
+                    }
+
+                }
             }
             SettingButton{
                 id:set;
@@ -372,4 +397,36 @@ Rectangle{
             }
         }
     }
+    BrightNess{
+        id:showBrightNess;
+        height: parent.height*1/4.0;
+        width: parent.width;
+        visible:footSetter.isBrightNess;
+        color: footColor
+        z:2;
+        y:root.height+height;
+        ParallelAnimation{
+            id:showBrightNessAnimation;
+            PropertyAnimation{
+                target: showBrightNess ;
+                property:"y";
+                from:root.height+showBrightNess.height;
+                to:root.height-showBrightNess.height;
+                duration: 1000
+            }
+            PropertyAnimation{
+                target: showCatalogs;
+                property:"opacity";
+                from:0
+                to:0.9
+                duration: 1000
+            }
+        }
+
+
+    }
+
+
+
+
 }

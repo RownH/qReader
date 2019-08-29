@@ -18,5 +18,7 @@
         <file>Images/back.png</file>
         <file>Popup/PopupCatalog.qml</file>
         <file>View/CataBottom.qml</file>
+        <file>Popup/BrightNess.qml</file>
+        <file>Images/lowBrightness.png</file>
     </qresource>
 </RCC>

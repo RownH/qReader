@@ -4,8 +4,6 @@ import QtQuick.Controls 2.0
 import "../View"
 Rectangle{
     id:root1;
-    width: parent.width-20;
-    height: parent.height;
     property var backColor:"black";
     property var fontColor: "white";
     property var name:"title"
@@ -19,9 +17,9 @@ Rectangle{
         anchors.top: parent.top;
         anchors.left: parent.left;
         anchors.right: parent.right;
-        anchors.leftMargin: 20;
-        anchors.rightMargin: 20;
-        height: 80;
+        anchors.leftMargin: 1.0/20.0* parent.width;
+        anchors.rightMargin: 1.0/20.0* parent.width;
+        height: 40.0/400.0 *parent.height;
         color: backColor
         Text {
             anchors.fill:parent;
@@ -44,20 +42,20 @@ Rectangle{
         anchors.top: _.bottom;
         color: backColor
         width: parent.width;
-        height: 60
+        height: 40.0/400.0 *parent.height
         RowLayout{
             id:row;
             anchors.top: parent.top;
             anchors.bottom: parent.bottom;
             anchors.right: parent.right;
-            anchors.rightMargin: 20;
+            anchors.rightMargin: 20.0/400.0*parent.width;
             anchors.left: parent.left;
-            anchors.leftMargin: 20;
-            spacing: 100
+            anchors.leftMargin: 20.0/400.0*parent.width;
+            spacing: 100.0/400.0*parent.width;
             Rectangle{
                 id:label;
                 height: parent.height;
-                width: 40;
+                width: 40.0/400.0*parent.width;
                 color: "transparent";
                 Text {
                     id:labelText;
@@ -79,7 +77,7 @@ Rectangle{
             Rectangle{
                 id:thought;
                 height: parent.height
-                width: 80;
+                width: 80.0/400.0*parent.width;
                 color: "transparent";
                 Text {
                     id:thoughtText;
@@ -101,7 +99,7 @@ Rectangle{
             Rectangle{
                 id:catalogs;
                 height: parent.height;
-                width: 40;
+                width: 40.0/400.0*parent.width;
                 color: "transparent";
                 Text {
                     id:catalogsText;
@@ -145,7 +143,7 @@ Rectangle{
                         target: borderBottom;
                         parent: label;
                         width: label.width;
-                        x:0;
+                        x:0;                //相对位置  相对父节点的位置
 
                     }
                     PropertyChanges {
