@@ -342,7 +342,6 @@ Rectangle{
         anchors.left: parent.left;
         anchors.top: parent.top
         anchors.bottom: parent.bottom
-        width: parent.width;
         height: parent.height;
         opacity: 0
         ParallelAnimation{

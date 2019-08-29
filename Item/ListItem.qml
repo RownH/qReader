@@ -30,9 +30,7 @@ Rectangle {
             else{
                 busy.running=true;
                 }
-
         }
-
     }
     Rectangle{
         id:rightBox;

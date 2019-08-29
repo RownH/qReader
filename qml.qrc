@@ -4,7 +4,19 @@
         <file>Item/ListItem.qml</file>
         <file>Item/BookItem.qml</file>
         <file>Item/testItem.qml</file>
-        <file>ReaderView.qml</file>
         <file>View/ReaderView.qml</file>
+        <file>Item/SettingButton.qml</file>
+        <file>Images/catalog.png</file>
+        <file>Item/catalog.png</file>
+        <file>Images/brightness.png</file>
+        <file>Images/nightmodel.png</file>
+        <file>Images/set.png</file>
+        <file>Images/sunsize.png</file>
+        <file>datemodel.cpp</file>
+        <file>datemodel.h</file>
+        <file>main.cpp</file>
+        <file>Images/back.png</file>
+        <file>Popup/PopupCatalog.qml</file>
+        <file>View/CataBottom.qml</file>
     </qresource>
 </RCC>
