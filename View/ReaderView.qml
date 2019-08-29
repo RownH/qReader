@@ -67,6 +67,9 @@ Rectangle{
                             else if(view.isSetting==1 &&mouseY%root.height>fontSetter.height  && mouseY%root.height<root.height-footSetter.height){
                                    view.isSetting=0;
                             }
+                            else if(footSetter.isCatalogView==1 && mouseX>showCatalogs.width){
+                                    footSetter.isCatalogView=0;
+                            }
 
                         }
                     }
@@ -219,8 +222,6 @@ Rectangle{
                 duration: 1000
             }
         }
-
-
     }
     Rectangle{
         id:footSetter;
@@ -228,6 +229,7 @@ Rectangle{
         height: 100;
         visible: view.isSetting;
         color: footColor;
+        property var isCatalogView: 0       //目录是否显示
             RowLayout{
                 id:process;
                 height: 50;
@@ -276,6 +278,8 @@ Rectangle{
             anchors.right: parent.right;
             anchors.rightMargin: 40;
             height: 40;
+
+
             // spacing:10;
             SettingButton{
                 id:catalog;
@@ -288,6 +292,8 @@ Rectangle{
                     anchors.fill: parent;
                     onClicked: {
                         showCatalogAnimation.start();
+                        footSetter.isCatalogView=1;
+                        view.isSetting=0;
                     }
                 }
             }
@@ -339,12 +345,13 @@ Rectangle{
 
     PopupCatalog{
         id:showCatalogs;
-        anchors.left: parent.left;
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        width: parent.width;
         height: parent.height;
-        opacity: 0
+        width: parent.width-1.0/5.0*parent.width
+        x:-width;
+        z:3;
+        visible: footSetter.isCatalogView;
+        opacity: 0;
+
         ParallelAnimation{
             id:showCatalogAnimation;
             PropertyAnimation{
@@ -364,6 +371,5 @@ Rectangle{
                 duration: 1000
             }
         }
-
     }
 }
