@@ -62,6 +62,9 @@ Rectangle{
                             if(footSetter.isBrightNess==1 && mouseY%parent.height<root.height-showBrightNess.height){
                                     footSetter.isBrightNess=0;
                             }
+                            else if(footSetter.isSetting==1&&mouseY%parent.height<root.height-showSettingBottom.height){
+                                footSetter.isSetting=0;
+                            }
                             else if(view.isSetting==0&& mouseX>width/2-width/5*1 && mouseX< width/2+width/5*1){
                                     view.isSetting=1;
                                     showFont.start();
@@ -236,6 +239,7 @@ Rectangle{
         property var isCatalogView: 0       //目录是否显示
         property var isBrightNess: 0
         property var isNeight: 0
+        property var isSetting: 0
         RowLayout{
                 id:process;
                 height: 50;
@@ -345,6 +349,14 @@ Rectangle{
                 buttonText: qsTr("设置")
                 buttonIconPath: "../Images/set.png"
                 buttonBackColor: "transparent"
+                MouseArea{
+                    anchors.fill: parent
+                    onClicked: {
+                        footSetter.isSetting=!footSetter.isSetting;
+                        showSettingBottomAnimation.start();
+                        view.isSetting=0;
+                    }
+                }
             }
         }
         ParallelAnimation{
@@ -425,8 +437,31 @@ Rectangle{
 
 
     }
-
-
-
-
+    SettingBottom{
+        id:showSettingBottom;
+        visible: footSetter.isSetting
+        width: parent.width;
+        backgroundColor:fontcolor
+        fontSize:root.fontSize;
+        height: 200;
+        y:root.height+height;
+        z:2;
+        ParallelAnimation{
+            id:showSettingBottomAnimation;
+            PropertyAnimation{
+                target: showSettingBottom ;
+                property:"y";
+                from:root.height+showSettingBottom.height;
+                to:root.height-showSettingBottom.height;
+                duration: 1000
+            }
+            PropertyAnimation{
+                target: showSettingBottom;
+                property:"opacity";
+                from:0
+                to:0.9
+                duration: 1000
+            }
+        }
+    }
 }

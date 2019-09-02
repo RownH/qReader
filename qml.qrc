@@ -7,7 +7,6 @@
         <file>View/ReaderView.qml</file>
         <file>Item/SettingButton.qml</file>
         <file>Images/catalog.png</file>
-        <file>Item/catalog.png</file>
         <file>Images/brightness.png</file>
         <file>Images/nightmodel.png</file>
         <file>Images/set.png</file>
@@ -20,5 +19,24 @@
         <file>View/CataBottom.qml</file>
         <file>Popup/BrightNess.qml</file>
         <file>Images/lowBrightness.png</file>
+        <file>Popup/SettingBottom.qml</file>
+        <file>Item/SettingButton1.qml</file>
+        <file>Images/font_size_up.png</file>
+        <file>Images/font_size_down.png</file>
+        <file>Item/SettingButton2.qml</file>
+        <file>Images/giftButton.png</file>
+        <file>Images/globalRegistration.png</file>
+        <file>Images/HeadsetButton.png</file>
+        <file>Images/heigtBrightness.png</file>
+        <file>Images/listButton.png</file>
+        <file>Images/other.png</file>
+        <file>Images/right_Alignment.png</file>
+        <file>Images/right_Alignment1.png</file>
+        <file>Images/right_Alignment2.png</file>
+        <file>Images/verticalAlignment.png</file>
+        <file>Item/SettingButton3.qml</file>
+        <file>Images/autoChangePage.png</file>
+        <file>Images/horzenScrenChange.png</file>
+        <file>Images/fullChangePage.png</file>
     </qresource>
 </RCC>

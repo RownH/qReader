@@ -6,7 +6,7 @@ Rectangle{
     property alias buttonText: buttonText.text
     property var buttonBackColor;
     color: buttonBackColor;
-        Rectangle{
+    Rectangle{
         id:button;
         anchors.top: parent.top;
         anchors.topMargin: 3;
