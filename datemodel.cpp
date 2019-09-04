@@ -8,6 +8,7 @@ Date::Date(const QString &title, const QString &author, const QString &dynasty, 
 dateModel::dateModel(QObject *parent)
     : QAbstractListModel(parent)
 {
+
 }
 int dateModel::rowCount(const QModelIndex &parent) const
 {

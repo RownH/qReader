@@ -62,7 +62,7 @@ Rectangle{
                             if(footSetter.isBrightNess==1 && mouseY%parent.height<root.height-showBrightNess.height){
                                     footSetter.isBrightNess=0;
                             }
-                            else if(footSetter.isSetting==1&&mouseY%parent.height<root.height-showSettingBottom.height){
+                            else if(footSetter.isSetting==1&&  mouseY%parent.height<root.height-showSettingBottom.height){
                                 footSetter.isSetting=0;
                             }
                             else if(view.isSetting==0&& mouseX>width/2-width/5*1 && mouseX< width/2+width/5*1){
