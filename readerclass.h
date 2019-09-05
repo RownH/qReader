@@ -23,17 +23,13 @@ public:
    QString bookSource()const;
    QString content()const;
 
-    void setCurrentPage(int page);
+   void setCurrentPage(int page);
    void setCurrentChart(int chart);
    void setBookSource(QString booksource);
    void setContent(QString content);
 
-private:
-    QQmlListProperty<Chapter> charts();
-    int chartCount();
-    void appendChart(Chapter*chapter);
-    Chapter *chartAt(int index);
-    void clearCharts();
+
+
 
 signals:
      void currentPageChanged(int page);
@@ -41,7 +37,11 @@ signals:
      void bookSourceChanged(QString booksource);
      void contentChanged(QString content);
 public slots:
-
+     QQmlListProperty<Chapter> charts();
+     int chartCount();
+     void appendChart(Chapter*chapter);
+     Chapter *chartAt(int index);
+     void clearCharts();
 
 public:
     static void appendChart(QQmlListProperty<Chapter>*,Chapter *chapter);
