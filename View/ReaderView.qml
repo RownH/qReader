@@ -3,6 +3,8 @@ import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.3
 import "../Item"
 import "../Popup"
+import Reader 1.0
+import Chapter 1.0
 Rectangle{
     id:root;
     width: 400;

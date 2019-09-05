@@ -38,5 +38,9 @@
         <file>Images/autoChangePage.png</file>
         <file>Images/horzenScrenChange.png</file>
         <file>Images/fullChangePage.png</file>
+        <file>readerclass.cpp</file>
+        <file>chapter.cpp</file>
+        <file>readerclass.h</file>
+        <file>chapter.h</file>
     </qresource>
 </RCC>

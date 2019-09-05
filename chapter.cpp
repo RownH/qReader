@@ -23,14 +23,17 @@ QString Chapter::str() const
 void Chapter::setSource(QString source)
 {
     m_source=source;
+    emit(sourceChanged());
 }
 
 void Chapter::setName(QString name)
 {
     m_name=name;
+    emit(nameChanged());
 }
 
 void Chapter::setStr(QString str)
 {
     m_str=str;
+    emit(strChanged());
 }
