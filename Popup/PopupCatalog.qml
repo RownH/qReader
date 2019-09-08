@@ -4,15 +4,14 @@ import QtQuick.Controls 2.0
 import "../View"
 Rectangle{
     id:root1;
-    width: 400;
-    height: 600;
     property var backColor:"black";
     property var fontColor: "white";
-    property var name:"title"
     property var borderParent:"1";
+    property var cataModel;
     color: backColor;
     Component.onCompleted: {
-        borderBottom.state="label";
+        borderBottom.state="catalogs";
+        swipView.currentIndex=2;
     }
     Rectangle {
         id: rectangle
@@ -26,7 +25,7 @@ Rectangle{
         Text {
             anchors.fill:parent;
             anchors.centerIn: parent.Center
-            text: qsTr("总裁偏要宠我")
+            text:cataModel.chartAt(cataModel.currentChart).name;
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignLeft
             color: fontColor;
@@ -71,9 +70,8 @@ Rectangle{
                     anchors.fill: parent;
                     onClicked: {
                        borderBottom.state="label";
-                       stack.push(mainView.label)
+                       swipView.currentIndex=0;
                     }
-
                 }
             }
             Rectangle{
@@ -93,10 +91,9 @@ Rectangle{
                          anchors.fill: parent;
                          onClicked: {
                              borderBottom.state="thoughts"
-                             stack.push(mainView.thought)
+                             swipView.currentIndex=1;
                          }
                  }
-
             }
             Rectangle{
                 id:catalogs;
@@ -108,7 +105,7 @@ Rectangle{
                     anchors.fill: parent
 
                     text: qsTr("目录")
-                  color:borderBottom.state=="catalogs"?"#FF4500":fontColor
+                    color:borderBottom.state=="catalogs"?"#FF4500":fontColor
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter
                 }
@@ -116,9 +113,8 @@ Rectangle{
                          anchors.fill: parent;
                          onClicked: {
                             borderBottom.state="catalogs";
-                             stack.push(mainView.catalogs)
+                            swipView.currentIndex=2;
                          }
-
                  }
             }
         }
@@ -181,54 +177,43 @@ Rectangle{
          }
 
     }
-
-    StackView {
+    CataBottom{
+        id:mainView;
+        catalogoModel: cataModel
+        backColor: root1.backColor;
+        fontColor: root1.fontColor;
+    }
+    Rectangle{
         anchors.top: _2.bottom;
         anchors.left: parent.left;
         anchors.right: parent.right;
+        width: parent.width;
         anchors.bottom: parent.bottom;
-        id: stack
-        pushEnter: Transition {
-               PropertyAnimation {
-                   property: "opacity"
-                   from: 0
-                   to:1
-                   duration: 200
-               }
-               PropertyAnimation{
-                    property: "x";
-                   from:root1.width;
-                    to:0;
-                    duration: 2000;
-               }
-           }
-           pushExit: Transition {
-               PropertyAnimation {
-                   property: "opacity"
-                   from: 1
-                   to:0
-                   duration: 200
-               }
-           }
-           popEnter: Transition {
-               PropertyAnimation {
-                   property: "opacity"
-                   from: 0
-                   to:1
-                   duration: 200
-               }
-           }
-           popExit: Transition {
-               PropertyAnimation {
-                   property: "opacity"
-                   from: 1
-                   to:0
-                   duration: 200
-               }
-           }
-        initialItem: mainView.label
-        CataBottom{
-            id:mainView;
-        }
+        SwipeView {
+            width: parent.width;
+            height: parent.height;
+            anchors.fill: parent;
+            id: swipView;
+                Loader{
+                    sourceComponent: mainView.label
+                }
+
+                Loader{
+                    sourceComponent: mainView.thought
+                }
+                Loader{
+                    sourceComponent: mainView.catalogs
+
+                }
+
+            onCurrentIndexChanged: {
+                if(swipView.currentIndex==0)
+                    borderBottom.state="label";
+                else if(swipView.currentIndex==1)
+                     borderBottom.state="thoughts";
+                else if(swipView.currentIndex==2)
+                     borderBottom.state="catalogs";
+                }
+            }
     }
 }

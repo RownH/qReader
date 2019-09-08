@@ -36,7 +36,7 @@ Window {
     }
     ReaderView{
         id:read;
-        width: 480;
+        width: 400;
         height: 600;
 
     }
