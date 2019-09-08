@@ -15,7 +15,7 @@ public:
     Q_PROPERTY(int currentChart READ currentChart WRITE setCurrentChart NOTIFY currentChartChanged)
     Q_PROPERTY(QString bookSource READ bookSource WRITE setBookSource NOTIFY bookSourceChanged)
     Q_PROPERTY(QString content READ content WRITE setContent NOTIFY contentChanged)
-    Q_PROPERTY(QQmlListProperty<Chapter>charts READ charts)
+    Q_PROPERTY(QQmlListProperty<Chapter>charts READ charts CONSTANT)
 
 public:
    int currentPage()const;

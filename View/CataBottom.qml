@@ -12,13 +12,41 @@ Item {
     property Component catalogs: catalogs;
     property Component thought: thought;
     property Component label: label;
+    property var backColor;
+    property var fontColor;
+    property var catalogoModel;
     Component{
         id:catalogs;
         Rectangle{
-            color: "red";
-            Text {
-                anchors.centerIn: parent;
-                text: qsTr("1")
+            anchors.fill: parent;
+            width: parent.width;
+            height: parent.height;
+            ListView{
+                id:view
+                width: parent.width;
+                height: parent.height
+                model: catalogoModel.charts;
+                delegate: Rectangle{
+                    width: parent.width;
+                    height: 30;
+                    color: backColor;
+                    Text {
+                        anchors.fill: parent;
+                        text: model.name
+                        color:index===catalogoModel.currentChart? "orange": fontColor
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignLeft
+                    }
+                    MouseArea{
+                        anchors.fill: parent;
+                        onClicked: {
+                            catalogoModel.currentChart=index;
+                        }
+                    }
+                    border.color: "#eeeeee";
+                }
+
+
             }
         }
     }
@@ -30,9 +58,7 @@ Item {
                 anchors.centerIn: parent;
                 text: qsTr("2")
             }
-
         }
-
     }
     Component{
         id:label;
@@ -42,10 +68,8 @@ Item {
                 anchors.centerIn: parent;
                 text: qsTr("3")
             }
-
         }
     }
-
 }
 
 
