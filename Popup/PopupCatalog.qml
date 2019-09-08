@@ -4,6 +4,8 @@ import QtQuick.Controls 2.0
 import "../View"
 Rectangle{
     id:root1;
+    width: 400;
+    height: 600;
     property var backColor:"black";
     property var fontColor: "white";
     property var name:"title"

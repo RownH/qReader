@@ -2,7 +2,15 @@
 
 ReaderClass::ReaderClass(QObject *parent) : QObject(parent)
 {
-
+        m_currentPage=0;
+        m_currentChart=0;
+        for (int i=0;i<10;i++) {
+           Chapter * a=new Chapter();
+           QString str=i+"章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容 ";
+           a->setStr(str);
+           a->setName(QString::number(i)+"章");
+           m_charts.append(a);
+        }
 }
 
 int ReaderClass::currentPage() const

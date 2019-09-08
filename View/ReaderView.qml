@@ -368,32 +368,32 @@ Rectangle{
 
                     wrapMode: Text.WrapAnywhere
                     onTextChanged: {
-                        view.contentHeight=readerText.height;
+                        view.contentHeight=root.height>readerText.height? root.height:readerText.height;
                     }
-                    MouseArea{
-                        anchors.fill: parent;
-                        onClicked: {
-                            console.log();
-                            if(footSetter.isBrightNess==1 && mouseY%parent.height<root.height-showBrightNess.height){
-                                    footSetter.isBrightNess=0;
-                            }
-                            else if(footSetter.isSetting==1&&  mouseY%parent.height<root.height-showSettingBottom.height){
-                                footSetter.isSetting=0;
-                            }
-
-                            else if(view.isSetting==1 &&mouseY%root.height>fontSetter.height  && mouseY%root.height<root.height-footSetter.height){
-                                   view.isSetting=0;
-                            }
-                            else if(footSetter.isCatalogView==1 && mouseX>showCatalogs.width){
-                                    footSetter.isCatalogView=0;
-                            }
-                            else if(view.isSetting==0&& mouseX>width/2-width/5*1 && mouseX< width/2+width/5*1){
-                                    view.isSetting=1;
-                                    showFont.start();
-                                    showFoot.start();
-                            }
-
+                }
+                MouseArea{
+                    anchors.fill: parent;
+                    onClicked: {
+                        console.log(view.contentHeight,root.height,readerText.height);
+                        if(footSetter.isBrightNess==1 && mouseY%parent.height<root.height-showBrightNess.height){
+                                footSetter.isBrightNess=0;
                         }
+                        else if(footSetter.isSetting==1&&  mouseY%parent.height<root.height-showSettingBottom.height){
+                            footSetter.isSetting=0;
+                        }
+
+                        else if(view.isSetting==1 &&mouseY%root.height>fontSetter.height  && mouseY%root.height<root.height-footSetter.height){
+                               view.isSetting=0;
+                        }
+                        else if(footSetter.isCatalogView==1 && mouseX>showCatalogs.width){
+                                footSetter.isCatalogView=0;
+                        }
+                        else if(view.isSetting==0&& mouseX>width/2-width/5*1 && mouseX< width/2+width/5*1){
+                                view.isSetting=1;
+                                showFont.start();
+                                showFoot.start();
+                        }
+
                     }
                 }
             }
@@ -612,15 +612,11 @@ Rectangle{
                     MouseArea{
                         anchors.fill: parent;
                         onClicked: {
-                            if(readCatalog.currentChart>=readCatalog.chartCount()){
-
-                            }
-                            else{
+                            if(readCatalog.currentChart<readCatalog.chartCount()-1){
                                 readCatalog.currentChart++;
                                 view.contentX=0;
                                 view.contentY=0;
                             }
-
                         }
                     }
                 }
