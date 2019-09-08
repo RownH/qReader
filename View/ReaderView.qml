@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.5
+
 import QtQuick.Layouts 1.3
 import "../Item"
 import "../Popup"
@@ -16,13 +17,11 @@ Rectangle{
     currengePage:小说的当前页数
     charts:小说每一章的信息
     currentChart:当前章数
-
-
     */
     Reader{
         id:readCatalog;
     }
-
+    //页头
     Rectangle{
         id:fonter;
         width: parent.width;
@@ -38,6 +37,7 @@ Rectangle{
             color: fontcolor
         }
     }
+    //主体部分
     Rectangle{
         width: 400;
         height: parent.height-footer.height-fonter.height;
@@ -131,6 +131,7 @@ Rectangle{
         }
 
     }
+    //页头设置部分
     Rectangle{
         id:fontSetter;
         width: parent.width;
@@ -244,6 +245,7 @@ Rectangle{
             }
         }
     }
+    //页脚设置部分
     Rectangle{
         id:footSetter;
         width: parent.width;
@@ -269,7 +271,6 @@ Rectangle{
                     Text {
                         color: "white"
                         text: qsTr("上一章")
-
                     }
                     MouseArea{
                         anchors.fill: parent;
@@ -289,16 +290,21 @@ Rectangle{
                     }
                 }
                 Rectangle{
+                    id:slider;
                     height: 50;
                     width: 200;
                     color: "transparent"
                     Slider{
                         width: parent.width;
                         from:0;
-                        to:100;
+                        to:readCatalog.chartCount()-1;
                         stepSize:1
-
+                        value: readCatalog.currentChart;
+                        onMoved: {
+                            readCatalog.currentChart=value
+                        }
                     }
+
                 }
                 Rectangle{
                     width: 50;
