@@ -5,7 +5,7 @@
 #include<QList>
 #include<QString>
 #include<QQmlListProperty>
-#include<chapter.h>
+#include<Book_chapter.h>
 class ReaderClass : public QObject
 {
     Q_OBJECT

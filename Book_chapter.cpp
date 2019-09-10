@@ -1,4 +1,4 @@
-#include "chapter.h"
+#include "Book_chapter.h"
 
 Chapter::Chapter(QObject *parent) : QObject(parent)
 {

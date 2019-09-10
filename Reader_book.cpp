@@ -1,4 +1,4 @@
-#include "readerclass.h"
+#include "Reader_book.h"
 
 ReaderClass::ReaderClass(QObject *parent) : QObject(parent)
 {

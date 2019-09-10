@@ -2,8 +2,8 @@
 #include <QQmlApplicationEngine>
 #include<datemodel.h>
 #include<QtQml/QtQml>
-#include<readerclass.h>
-#include<chapter.h>
+#include<Reader_book.h>
+#include<Book_chapter.h>
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
