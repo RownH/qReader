@@ -19,7 +19,7 @@ private:
     int currentImg;//当前背景图片
     QList<QString>m_Muic;//背景音乐
     QList<QString>m_Img;//背景图片
-    QColor m_backColor;
+    QColor m_backColor;//背景颜色
 };
 
 #endif // BACKGROUND_SETTING_H
