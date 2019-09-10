@@ -1,11 +1,11 @@
 #include "Reader_book.h"
 
-ReaderClass::ReaderClass(QObject *parent) : QObject(parent)
+Reader_Book::Reader_Book(QObject *parent) : QObject(parent)
 {
         m_currentPage=0;
         m_currentChart=0;
         for (int i=0;i<100;i++) {
-           Chapter * a=new Chapter();
+           Book_chapter * a=new Book_chapter();
            QString str=i+"章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容 ";
            a->setStr(str);
            a->setName(QString::number(i)+"章");
@@ -13,69 +13,69 @@ ReaderClass::ReaderClass(QObject *parent) : QObject(parent)
         }
 }
 
-int ReaderClass::currentPage() const
+int Reader_Book::currentPage() const
 {
     return m_currentPage;
 }
-int ReaderClass::currentChart()const{
+int Reader_Book::currentChart()const{
     return m_currentChart;
 }
-QString ReaderClass:: bookSource()const{
+QString Reader_Book:: bookSource()const{
     return m_bookSource;
 }
-QString ReaderClass::content()const{
+QString Reader_Book::content()const{
     return  m_content;
 }
 
- void ReaderClass::setCurrentPage(int page){
+ void Reader_Book::setCurrentPage(int page){
     m_currentPage=page;
     emit currentPageChanged(page);
  }
-void ReaderClass::setCurrentChart(int chart){
+void Reader_Book::setCurrentChart(int chart){
     m_currentChart=chart;
     emit currentChartChanged(chart);
 }
-void ReaderClass::setBookSource(QString booksource){
+void Reader_Book::setBookSource(QString booksource){
     m_bookSource=booksource;
     emit bookSourceChanged(booksource);
 }
-void ReaderClass::setContent(QString content){
+void Reader_Book::setContent(QString content){
     m_content=content;
     emit contentChanged(content);
 }
 
-QQmlListProperty<Chapter> ReaderClass::charts(){
-    return  QQmlListProperty<Chapter>(this,this,&ReaderClass::appendChart,&ReaderClass::chartCount,&ReaderClass::chartAt,&ReaderClass::clearCharts);
+QQmlListProperty<Book_chapter> Reader_Book::charts(){
+    return  QQmlListProperty<Book_chapter>(this,this,&Reader_Book::appendChart,&Reader_Book::chartCount,&Reader_Book::chartAt,&Reader_Book::clearCharts);
  }
- int ReaderClass::chartCount(){
+ int Reader_Book::chartCount(){
     return  m_charts.size();
  }
- void ReaderClass::appendChart(Chapter*chapter){
+ void Reader_Book::appendChart(Book_chapter*chapter){
     m_charts.append(chapter);
  }
- Chapter *ReaderClass::chartAt(int index){
+ Book_chapter *Reader_Book::chartAt(int index){
      return  m_charts.at(index);
  }
- void ReaderClass::clearCharts(){
+ void Reader_Book::clearCharts(){
      m_charts.clear();
  }
 
- void ReaderClass::appendChart(QQmlListProperty<Chapter>*list, Chapter *chapter)
+ void Reader_Book::appendChart(QQmlListProperty<Book_chapter>*list, Book_chapter *chapter)
  {
-     reinterpret_cast<ReaderClass* >(list->data)->appendChart(chapter);
+     reinterpret_cast<Reader_Book* >(list->data)->appendChart(chapter);
  }
 
- int ReaderClass::chartCount(QQmlListProperty<Chapter>*list)
+ int Reader_Book::chartCount(QQmlListProperty<Book_chapter>*list)
  {
-     return  reinterpret_cast<ReaderClass* >(list->data)->chartCount();
+     return  reinterpret_cast<Reader_Book* >(list->data)->chartCount();
  }
 
- Chapter *ReaderClass::chartAt(QQmlListProperty<Chapter> *list, int index)
+ Book_chapter *Reader_Book::chartAt(QQmlListProperty<Book_chapter> *list, int index)
  {
-    return  reinterpret_cast<ReaderClass*>(list->data)->chartAt(index);
+    return  reinterpret_cast<Reader_Book*>(list->data)->chartAt(index);
  }
 
- void ReaderClass::clearCharts(QQmlListProperty<Chapter> *list)
+ void Reader_Book::clearCharts(QQmlListProperty<Book_chapter> *list)
  {
-      reinterpret_cast<ReaderClass*>(list->data)->clearCharts();
+      reinterpret_cast<Reader_Book*>(list->data)->clearCharts();
  }

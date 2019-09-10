@@ -17,7 +17,7 @@ Window {
 
     }
     visible: true
-    width:400
+    width:480
     height: 600
     title: qsTr("Hello World")
     ListView{
@@ -36,7 +36,7 @@ Window {
     }
     ReaderView{
         id:read;
-        width: 400;
+        width: 480;
         height: 600;
 
     }

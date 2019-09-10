@@ -1,38 +1,38 @@
 #include "Book_chapter.h"
 
-Chapter::Chapter(QObject *parent) : QObject(parent)
+Book_chapter::Book_chapter(QObject *parent) : QObject(parent)
 {
 
 }
 
-QString Chapter::name() const
+QString Book_chapter::name() const
 {
     return m_name;
 }
 
-QString Chapter::source() const
+QString Book_chapter::source() const
 {
     return m_source;
 }
 
-QString Chapter::str() const
+QString Book_chapter::str() const
 {
     return m_str;
 }
 
-void Chapter::setSource(QString source)
+void Book_chapter::setSource(QString source)
 {
     m_source=source;
     emit(sourceChanged());
 }
 
-void Chapter::setName(QString name)
+void Book_chapter::setName(QString name)
 {
     m_name=name;
     emit(nameChanged());
 }
 
-void Chapter::setStr(QString str)
+void Book_chapter::setStr(QString str)
 {
     m_str=str;
     emit(strChanged());

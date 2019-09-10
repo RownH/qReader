@@ -10,8 +10,8 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
     dateModel model;
-    qmlRegisterType<ReaderClass>("Reader", 1, 0, "Reader");
-    qmlRegisterType<Chapter>("Chapter", 1, 0, "Chapter");
+    qmlRegisterType<Reader_Book>("Reader", 1, 0, "Reader");
+    qmlRegisterType<Book_chapter>("Chapter", 1, 0, "Chapter");
     model.append("小说","李白","唐朝","内容","图片");
     model.append("小说1","李白","唐朝","内容","图片");
     model.append("小说2","李白","唐朝","内容","图片");

@@ -1,16 +1,16 @@
-#ifndef CHAPTER_H
-#define CHAPTER_H
+#ifndef Book_chapter_H
+#define Book_chapter_H
 
 #include <QObject>
 
-class Chapter : public QObject
+class Book_chapter : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString source READ source WRITE setSource  NOTIFY sourceChanged)
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(QString str READ str WRITE setStr NOTIFY strChanged)
 public:
-    explicit Chapter(QObject *parent = nullptr);
+    explicit Book_chapter(QObject *parent = nullptr);
 
     QString name()const;
     QString source()const;
@@ -31,4 +31,4 @@ private:
         QString m_str;
 };
 
-#endif // CHAPTER_H
+#endif // Book_chapter_H

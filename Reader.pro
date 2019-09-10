@@ -15,8 +15,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         Book_chapter.cpp \
         Reader_book.cpp \
+        background_setting.cpp \
+        book_settings.cpp \
         datemodel.cpp \
-        main.cpp
+        font_setter.cpp \
+        main.cpp \
+        theme_setting.cpp
 
 RESOURCES += qml.qrc
 
@@ -38,4 +42,8 @@ DISTFILES += \
 HEADERS += \
     Book_chapter.h \
     Reader_book.h \
-    datemodel.h
+    background_setting.h \
+    book_settings.h \
+    datemodel.h \
+    font_setter.h \
+    theme_setting.h

@@ -39,7 +39,7 @@ Rectangle{
     }
     //主体部分
     Rectangle{
-        width: 400;
+        width: parent.width;
         height: parent.height-footer.height-fonter.height;
         anchors.top: fonter.bottom;
         color: backcolor
