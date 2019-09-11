@@ -1,35 +1,29 @@
 #ifndef THEME_SETTING_H
 #define THEME_SETTING_H
 
-#include <QObject>
 #include<font_setter.h>
 #include<background_setting.h>
-class Theme_setting : public QObject
+#define WHITE 0
+#define YELLOW 1
+#define BISQUE 2//暗黄色
+#define BLACK 3
+#define GREEN 4
+#define BLACKISH_GREEN 5
+class Theme_setting
 {
-    Q_OBJECT
-    Q_ENUMS(Themes)
+
 public:
-    explicit Theme_setting(QObject *parent = nullptr);
-    Q_PROPERTY(Themes Theme READ Theme WRITE setTheme NOTIFY ThemeChanged)
-    enum Themes{
-        WHITE,
-        YELLOW,
-        BISQUE,//暗黄色
-        BLACK,
-        GREEN,
-        BLACKISH_GREEN
-    };
+    explicit Theme_setting();
 
-signals:
-    void ThemeChanged(Themes theme);
-public slots:
-    Themes Theme()const;
-    void setTheme(Themes theme);
-private:
-    Themes currentThemes;
-    background_setting m_backSetting;
+
+public:
+    int Theme()const;
+    void setTheme(int theme);
+
+    background_setting m_backSet;
     font_setter m_fontSet;
-
+private:
+    int currentThemes;
 };
 
 #endif // THEME_SETTING_H

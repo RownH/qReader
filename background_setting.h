@@ -10,9 +10,9 @@ class background_setting
 {
 public:
     background_setting(); 
-    QString getCurrentMusic();
-    QString getCurrentImg();
-    QColor getBackColor();
+    QString getCurrentMusic()const;
+    QString getCurrentImg()const;
+    QColor getBackColor()const;
     void setBackColor(QColor color);
 private:
     int currentMusic;//当前背景音乐

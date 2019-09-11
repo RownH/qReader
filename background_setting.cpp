@@ -5,16 +5,16 @@ background_setting::background_setting()
 
 }
 
-QString background_setting::getCurrentMusic()
+QString background_setting::getCurrentMusic()const
 {
     return m_Muic[currentMusic];
 }
-QString background_setting::getCurrentImg()
+QString background_setting::getCurrentImg()const
 {
     return  m_Img[currentImg];
 }
 
-QColor background_setting::getBackColor()
+QColor background_setting::getBackColor()const
 {
     return m_backColor;
 }
