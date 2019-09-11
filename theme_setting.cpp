@@ -53,6 +53,7 @@ void Theme_setting::setTheme(Themes theme)
             break;
         }
     }
+    ThemeChanged(currentThemes);
 
 
 }

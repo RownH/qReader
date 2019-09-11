@@ -19,12 +19,7 @@ signals:
 public slots:
 
 private:
-    int m_fontSize;//字体大小
-    QColor m_fontColor;//字体颜色
-    QColor m_backGroundColor;//背景颜色
-    QString m_fontFamily;//字体类型
-    double m_lineHeight;// 行高
-    double m_wordSpaing;// 自距
+
 
 
 };

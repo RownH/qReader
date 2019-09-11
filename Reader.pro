@@ -17,6 +17,7 @@ SOURCES += \
         Reader_book.cpp \
         background_setting.cpp \
         book_settings.cpp \
+        curpage_setting.cpp \
         datemodel.cpp \
         font_setter.cpp \
         main.cpp \
@@ -44,6 +45,7 @@ HEADERS += \
     Reader_book.h \
     background_setting.h \
     book_settings.h \
+    curpage_setting.h \
     datemodel.h \
     font_setter.h \
     theme_setting.h

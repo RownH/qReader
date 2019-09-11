@@ -7,5 +7,4 @@ Rectangle{
     height: 30;
     radius: 2;
     color:buttonColor;
-
 }
