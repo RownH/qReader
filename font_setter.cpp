@@ -6,11 +6,12 @@ font_setter::font_setter()
     m_fontColor="black";
 }
 
-int font_setter::getFontSize()
+
+int font_setter::getFontSize()const
 {
     return m_fontSize;
 }
-QColor font_setter::getFontColor()
+QColor font_setter::getFontColor()const
 {
         return m_fontColor;
 }
