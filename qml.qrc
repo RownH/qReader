@@ -38,5 +38,7 @@
         <file>Images/autoChangePage.png</file>
         <file>Images/horzenScrenChange.png</file>
         <file>Images/fullChangePage.png</file>
+        <file>qmldir</file>
+        <file>Globel_Object.qml</file>
     </qresource>
 </RCC>

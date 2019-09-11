@@ -9,8 +9,8 @@ class font_setter
 
 public:
     explicit font_setter();
-    int getFontSize();
-    QColor getFontColor();
+    int getFontSize()const;
+    QColor getFontColor()const;
     void setFontSize(int Size);
     void setFontColor(QColor Color);
 private:
