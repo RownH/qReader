@@ -2,7 +2,12 @@
 
 Read_View::Read_View(QObject *parent) : QObject(parent)
 {
-
+       m_currentBook=0;
+       for (int i=0;i<4;i++) {
+            Reader_Book *a=new Reader_Book();
+            a->setBookName(i+"本书");
+            Book_shelf.append(a);
+       }
 }
 
 QQmlListProperty<Reader_Book> Read_View::books()
@@ -34,6 +39,25 @@ void Read_View::clearBooks()
 {
     Book_shelf.clear();
 }
+
+void Read_View::sorted()
+{
+    //排序
+    return ;
+}
+
+int Read_View::currentBook()
+{
+    return m_currentBook;
+}
+
+void Read_View::setCurrentBook(int index)
+{
+    m_currentBook=index;
+    currentBookChanged(index);
+}
+
+
 
 void Read_View::appendBooks(QQmlListProperty<Reader_Book> *list, Reader_Book *book)
 {

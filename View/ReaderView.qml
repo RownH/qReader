@@ -33,7 +33,7 @@ Rectangle{
             anchors.left: parent.left;
             anchors.margins: 2
             id: read
-            text: qsTr(readCatalog.chartAt(readCatalog.currentChart).name);
+            text:qsTr(readCatalog.chartAt(readCatalog.currentChart).name);
             font.pixelSize:10
             color: fontcolor
         }

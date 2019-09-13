@@ -7,28 +7,30 @@ import "./View"
 import "."
 import Reader 1.0
 import Chapter 1.0
+import BookSelft 1.0
 Window {
     visible: true
     width:480
     height: 600
     title: qsTr("Hello World")
-  /*      ListView{
+      ListView{
             id:view;
             width: parent.width;
             height: parent.height;
-            model:$Model;
+            model: Settings.bookShelf.books;
             delegate:  ListItem{
             }
         }
-        */
+
+
     ReaderView{
         id:read;
         width: 480;
         height: 600;
-        Settings.theme.fontSize:17;
     }
-    Settings.theme.onFontSizeChanged:{
-        console.log("font changed");
+
+    Component.onCompleted: {
+        console.log(Settings.bookShelf.currentBook,Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).bookName);
     }
 }
 

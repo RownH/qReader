@@ -6,14 +6,16 @@
 #include<QQmlListProperty>
 #include<QString>
 #include<Reader_book.h>
+#include<algorithm>
 class Read_View : public QObject
 {
     Q_OBJECT
 public:
     explicit Read_View(QObject *parent = nullptr);
-    Q_PROPERTY(QQmlListProperty<Reader_Book> books READ books)
+    Q_PROPERTY(QQmlListProperty<Reader_Book> books READ books CONSTANT)
+    Q_PROPERTY(int currentBook READ currentBook WRITE setCurrentBook NOTIFY currentBookChanged)
 signals:
-
+     void currentBookChanged(int);
 public slots:
      QQmlListProperty<Reader_Book> books();
      int booksCount();
@@ -22,12 +24,20 @@ public slots:
      void clearBooks();
 
 public:
+
+    void loadHistory();//加载历史记录
+    void saveHistory();//保存记录
+    void sorted();
+    int currentBook();
+    void setCurrentBook(int index);
+
     static void appendBooks(QQmlListProperty<Reader_Book>*,Reader_Book *chapter);
     static int booksCount(QQmlListProperty<Reader_Book>*);
     static Reader_Book * booksAt(QQmlListProperty<Reader_Book>*,int index);
     static void clearBooks(QQmlListProperty<Reader_Book>*);
 
 private:
+    int m_currentBook;
     QList<Reader_Book *>Book_shelf;
 };
 

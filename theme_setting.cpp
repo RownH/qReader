@@ -31,6 +31,7 @@ void Theme_setting::setTheme(int theme)
         case BISQUE:{
                 m_backSet.setBackColor("#FFE4C4");
                 m_fontSet.setFontColor("BLACK");
+                break;
         }
         case BLACK:{
                 m_backSet.setBackColor("#808080");
