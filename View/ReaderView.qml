@@ -167,6 +167,14 @@ Rectangle{
                         anchors.fill: parent;
                         source: "../Images/back.png"
                     }
+                    MouseArea{
+                        anchors.fill: parent;
+                        onClicked: {
+                            root.visible=0;
+                            view.isSetting=0;
+
+                        }
+                    }
 
 
                 }

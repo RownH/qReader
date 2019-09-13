@@ -40,5 +40,6 @@
         <file>Images/fullChangePage.png</file>
         <file>qmldir</file>
         <file>Globel_Object.qml</file>
+        <file>Item/Book_ShelfItem.qml</file>
     </qresource>
 </RCC>
