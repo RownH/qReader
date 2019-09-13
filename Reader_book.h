@@ -15,7 +15,7 @@ public:
     Q_PROPERTY(int currentChart READ currentChart WRITE setCurrentChart NOTIFY currentChartChanged)
     Q_PROPERTY(QString bookSource READ bookSource WRITE setBookSource NOTIFY bookSourceChanged)
     Q_PROPERTY(QString content READ content WRITE setContent NOTIFY contentChanged)
-    Q_PROPERTY(QQmlListProperty<Book_chapter>charts READ charts CONSTANT)
+    Q_PROPERTY(QQmlListProperty<Book_chapter>charts READ charts )
 
 public:
    int currentPage()const;
@@ -53,7 +53,7 @@ public:
 private:
     int m_currentPage;  //当前页
     int m_currentChart;//当前章节
-
+    int font_acount;//字节总数
     QString m_bookSource;//当前目录
     QString m_content;//当前文章内容
     QList<Book_chapter*>m_charts;//不同的章节

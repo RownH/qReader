@@ -21,6 +21,7 @@ SOURCES += \
         datemodel.cpp \
         font_setter.cpp \
         main.cpp \
+        read_view.cpp \
         theme_setting.cpp
 
 RESOURCES += qml.qrc
@@ -48,4 +49,5 @@ HEADERS += \
     curpage_setting.h \
     datemodel.h \
     font_setter.h \
+    read_view.h \
     theme_setting.h
