@@ -2,12 +2,11 @@ import QtQuick 2.7
 import QtQuick.Controls 2.5
 import "../Item"
 import QtQuick.Layouts 1.3
+import "../"
 Rectangle{
     id:root;
-    width:400;
-    height: 100;
-    property var backgroundColor: "black"
-    property alias fontSize:textFontSize.text;
+
+    property var backgroundColor;
     color: backgroundColor
     SwipeView {
         id: view
@@ -18,25 +17,32 @@ Rectangle{
             //width: parent.width;
             //height: parent.height 不支持操作
             ColumnLayout{
-
+                width: parent.width;
+                height: parent.height
+                anchors.fill: parent;
                 RowLayout{
+                    height: parent.height;
                     Layout.leftMargin: 20;
-                    Layout.margins: 20
                     Layout.topMargin:15;
-                    Layout.bottomMargin: 15
-                    spacing: 15
+                    spacing:   (parent.width-80-80-20-50-50-2*Layout.leftMargin)*1.0/4
                     SettingButton1{
                         width: 80;
                         height: 30;
                         buttonIconPath: "../Images/font_size_down.png"
                         buttonIconWidth: width/3
                         buttonIconHeight: height
+                        MouseArea{
+                            anchors.fill: parent;
+                            onClicked: {
+                                Settings.bookSetting.font_Size--;
+                            }
+                        }
                     }
                     Text {
                         id: textFontSize;
-                        text: qsTr(fontSize)
+                        width: 20
+                        text: qsTr(String(Settings.bookSetting.font_Size))
                         color: "white"
-                        font.pixelSize: fontSize
                     }
                     SettingButton1{
                         width: 80;
@@ -44,6 +50,12 @@ Rectangle{
                         buttonIconPath: "../Images/font_size_up.png"
                         buttonIconWidth: width/3
                         buttonIconHeight: height
+                        MouseArea{
+                            anchors.fill: parent;
+                            onClicked: {
+                                Settings.bookSetting.font_Size++;
+                            }
+                        }
                     }
                     SettingButton2{
                         width: 50;
@@ -59,11 +71,9 @@ Rectangle{
                     }
                 }
                 RowLayout{
+                    width: parent.width;
                     Layout.leftMargin: 20;
-                    Layout.margins: 20
-                    Layout.topMargin:10;
-                    Layout.bottomMargin: 10
-                    spacing: 10
+                    spacing:   (root.width-5*50-30-2*Layout.leftMargin)*1.0/5
                     SettingButton1{
                         width: 50;
                         height: 30;
@@ -114,31 +124,64 @@ Rectangle{
                     }
                 }
                 RowLayout{
+                    height: parent.height
                     Layout.leftMargin: 20;
-                    Layout.margins: 20
-                    Layout.topMargin:10;
-                    Layout.bottomMargin: 10
-                    spacing: 10
+                    Layout.bottomMargin: 30
+                    spacing:   (root.width-5*50-30-2*Layout.leftMargin)*1.0/5
                     SettingButton3{
-                        buttonColor: "white"
+                        buttonColor: "#F0F0F0"
                         radius: 15
+                        border.color:  Settings.bookSetting.theme===1?"red":"#eeeeee";
+                        MouseArea{
+                            anchors.fill: parent;
+                            onClicked: {
+                                Settings.bookSetting.theme=1;
+                            }
+                        }
                     }
                     SettingButton3{
-                        buttonColor: "#FFE4C4"
+                        buttonColor: "#D8C0A8"
                         radius: 15
-
+                        border.color:  Settings.bookSetting.theme===2?"red":"#eeeeee";
+                        MouseArea{
+                            anchors.fill: parent;
+                            onClicked: {
+                                Settings.bookSetting.theme=2;
+                            }
+                        }
                     }
                     SettingButton3{
-                        buttonColor: "#888888"
+                        buttonColor: "#484848"
                         radius: 15
+                        border.color:  Settings.bookSetting.theme===3?"red":"#eeeeee";
+                        MouseArea{
+                            anchors.fill: parent;
+                            onClicked: {
+                                Settings.bookSetting.theme=3;
+                            }
+                        }
                     }
                     SettingButton3{
-                        buttonColor: "#7FFFD4"
+                        buttonColor: "#C0F0D8"
                         radius: 15
+                        border.color:  Settings.bookSetting.theme===4?"red":"#eeeeee";
+                        MouseArea{
+                            anchors.fill: parent;
+                            onClicked: {
+                                Settings.bookSetting.theme=4;
+                            }
+                        }
                     }
                     SettingButton3{
-                        buttonColor: "#333366"
+                        buttonColor: "#001830"
                         radius: 15
+                        border.color:  Settings.bookSetting.theme===5?"red":"#eeeeee";
+                        MouseArea{
+                            anchors.fill: parent;
+                            onClicked: {
+                                Settings.bookSetting.theme=5;
+                            }
+                        }
                     }
                     SettingButton1{
                         width: 30;
@@ -156,13 +199,12 @@ Rectangle{
         Rectangle{
             color:backgroundColor
             ColumnLayout{
-
                     RowLayout{
                         Layout.leftMargin: 20;
                         Layout.margins: 20
                         Layout.topMargin:15;
                         Layout.bottomMargin: 15
-                        spacing: 15
+                        spacing: (root.width-4*80-2*Layout.leftMargin)*1.0/3
                         SettingButton2{
                             width: 80;
                             height: 30;
@@ -189,7 +231,7 @@ Rectangle{
                         Layout.rightMargin: 50
                         Layout.topMargin:10;
                         Layout.bottomMargin: 10
-                        spacing: (root.width-2*Layout.leftMargin)*1.0/3
+                        spacing: (root.width-30*3-2*Layout.leftMargin)*1.0/2.0
 
                         SettingButton{
                             buttonIconPath: "../Images/autoChangePage.png"

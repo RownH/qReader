@@ -12,14 +12,14 @@ public:
     background_setting(); 
     QString getCurrentMusic()const;
     QString getCurrentImg()const;
-    QColor getBackColor()const;
-    void setBackColor(QColor color);
+    QString getBackColor()const;
+    void setBackColor(QString color);
 private:
     int currentMusic;//当前背景音乐
     int currentImg;//当前背景图片
     QList<QString>m_Muic;//背景音乐
     QList<QString>m_Img;//背景图片
-    QColor m_backColor;//背景颜色
+    QString m_backColor;//背景颜色
 };
 
 #endif // BACKGROUND_SETTING_H

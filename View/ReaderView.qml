@@ -5,37 +5,31 @@ import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.3
 import "../Item"
 import "../Popup"
-import Reader 1.0
-import Chapter 1.0
+import"../"
 Rectangle{
     id:root;
-    property var backcolor:"#FFE4B5";
-    property var fontcolor: "black";
-    property var fontSize: 15;
-    property var footColor: "black"
+    property var footColor: "#301818"
+    anchors.fill: parent;
     /*C++注册的章节对象
     booksSource:小说的地址
     currengePage:小说的当前页数
     charts:小说每一章的信息
     currentChart:当前章数
     */
-    Reader{
-        id:readCatalog;
-    }
     //页头
     Rectangle{
         id:fonter;
         width: parent.width;
         height: 15;
-        color: backcolor;
+        color: Settings.bookSetting.back_Color;
         z:3
         Text {
             anchors.left: parent.left;
             anchors.margins: 2
             id: read
-            text:qsTr(readCatalog.chartAt(readCatalog.currentChart).name);
+            text:qsTr(Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).chartAt(Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).currentChart).name);
             font.pixelSize:10
-            color: fontcolor
+            color: Settings.bookSetting.font_Color
         }
     }
     //主体部分
@@ -43,7 +37,7 @@ Rectangle{
         width: parent.width;
         height: parent.height-footer.height-fonter.height;
         anchors.top: fonter.bottom;
-        color: backcolor
+        color: Settings.bookSetting.back_Color
         Flickable {
 
             id: view
@@ -64,8 +58,9 @@ Rectangle{
                     id:readerText;
                     width: parent.width
                     readOnly: true;
-                    color: fontcolor;
-                    text: readCatalog.chartAt(readCatalog.currentChart).str
+                    color: Settings.bookSetting.font_Color;
+                    font.pixelSize: Settings.bookSetting.font_Size
+                    text:Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).chartAt(Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).currentChart).str
 
                     wrapMode: Text.WrapAnywhere
                     onTextChanged: {
@@ -75,14 +70,13 @@ Rectangle{
                 MouseArea{
                     anchors.fill: parent;
                     onClicked: {
-                        console.log(view.contentHeight,root.height,readerText.height);
-                        if(footSetter.isBrightNess==1 && mouseY%parent.height<root.height-showBrightNess.height){
+                        console.log(mouseY%root.height,root.height-showBrightNess.height);
+                        if(footSetter.isBrightNess==1 && mouseY%root.height<root.height-showBrightNess.height){
                                 footSetter.isBrightNess=0;
                         }
-                        else if(footSetter.isSetting==1&&  mouseY%parent.height<root.height-showSettingBottom.height){
+                        else if(footSetter.isSetting==1&&  mouseY%root.height<root.height-showSettingBottom.height){
                             footSetter.isSetting=0;
                         }
-
                         else if(view.isSetting==1 &&mouseY%root.height>fontSetter.height  && mouseY%root.height<root.height-footSetter.height){
                                view.isSetting=0;
                         }
@@ -104,28 +98,28 @@ Rectangle{
         id:footer;
         width: parent.width;
         height: 15;
-        color: backcolor;
+        color: Settings.bookSetting.back_Color;
         anchors.bottom: root.bottom;
         Text {
-            color:backcolor;
+            color:Settings.bookSetting.back_Color;
             anchors.left: parent.left;
             height: parent.height
             anchors.leftMargin: 5;
             id: currentRead;
             font.pixelSize: 10;
             font.italic: true;
-            text: qsTr((readCatalog.currentPage/(readCatalog.chartCount()+0.0)).toString());
+            text: qsTr((Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).currentPage/(Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).chartCount()+0.0)).toString());
         }
         Rectangle{
             width: 50;
             height: parent.height;
             anchors.right: parent.right;
             anchors.rightMargin: 5;
-            color: backcolor;
+            color: Settings.bookSetting.back_Color;
             Text{
                 anchors.left: parent.left;
                 text: Date().toString();
-                color: fontcolor;
+                color: Settings.bookSetting.font_Color;
                 font.pixelSize: 10
             }
 
@@ -175,15 +169,11 @@ Rectangle{
 
                         }
                     }
-
-
                 }
                 Rectangle{
                     width: 100;
                     height: parent.height;
                     color: "transparent";
-
-
                 }
                 Rectangle{
                     id:buyButton;
@@ -265,177 +255,175 @@ Rectangle{
         property var isBrightNess: 0
         property var isNeight: 0
         property var isSetting: 0
-        RowLayout{
-                id:process;
-                height: 50;
-                anchors.top: parent.top;
-                anchors.left: parent.left;
-                anchors.leftMargin: 20;
-                anchors.right: parent.right;
-                anchors.rightMargin: 20;
-                Rectangle{
-                    width: 50;
-                    height: 20;
-                    color: "transparent"
-                    Text {
-                        color: "white"
-                        text: qsTr("上一章")
+        ColumnLayout{
+            height: 50;
+            width: parent.width;
+            anchors.fill: parent;
+            anchors.leftMargin: 20;
+            anchors.rightMargin: 20;
+            RowLayout{
+                    id:process;
+                    height: parent.height
+                    width: parent.width;
+                    spacing: (parent.width-50-slider.width-50)/2
+                    Rectangle{
+                        width: 50;
+                        height: 20;
+                        color: "transparent"
+                        Text {
+                            color: "white"
+                            text: qsTr("上一章")
+                        }
+                        MouseArea{
+                            anchors.fill: parent;
+                            onClicked: {
+                                if(Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).currentChart<1){
+
+                                }
+                                else{
+                                    Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).currentChart--;
+                                    view.contentX=0;
+                                    view.contentY=0;
+                                }
+
+
+                            }
+                        }
                     }
+                    Rectangle{
+                        id:slider;
+                        height: 50;
+                        width: parent.width-150
+                        color: "transparent"
+                        Slider{
+                            anchors.fill: parent;
+                            width: parent.width;
+                            from:0;
+                            to:Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).chartCount()-1;
+                            stepSize:1
+                            value: Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).currentChart;
+                            onMoved: {
+                                Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).currentChart=value
+                            }
+
+                        }
+
+                    }
+                    Rectangle{
+                        width: 50;
+                        height: 20;
+                        color: "transparent"
+                        Text {
+                            color:"white"
+                            text: qsTr("下一章")
+
+                        }
+                        MouseArea{
+                            anchors.fill: parent;
+                            onClicked: {
+                                if(Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).currentChart<Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).chartCount()-1){
+                                    Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).currentChart++;
+                                    view.contentX=0;
+                                    view.contentY=0;
+                                }
+                            }
+                        }
+                    }
+            }
+            RowLayout{
+                // spacing:10;
+                width: parent.width;
+                height: parent.height
+                spacing: (parent.width-catalog.width-brightness.width-nightModel.width-set.width)/3.0
+                SettingButton{
+                    id:catalog;
+                    width: 30;
+                    height: 40;
+                    buttonText :qsTr("目录")
+                    buttonIconPath:"../Images/catalog.png";
+                    buttonBackColor: "transparent";
                     MouseArea{
                         anchors.fill: parent;
                         onClicked: {
-                            if(readCatalog.currentChart<1){
-
-                            }
-                            else{
-                                readCatalog.currentChart--;
-                                console.log(view.originX,view.originY);
-                                view.contentX=0;
-                                view.contentY=0;
-                            }
-
-
+                            showCatalogAnimation.start();
+                            footSetter.isCatalogView=1;
+                            view.isSetting=0;
                         }
                     }
                 }
-                Rectangle{
-                    id:slider;
-                    height: 50;
-                    width: 200;
-                    color: "transparent"
-                    Slider{
-                        width: parent.width;
-                        from:0;
-                        to:readCatalog.chartCount()-1;
-                        stepSize:1
-                        value: readCatalog.currentChart;
-                        onMoved: {
-                            readCatalog.currentChart=value
-                        }
-                    }
-
-                }
-                Rectangle{
-                    width: 50;
-                    height: 20;
-                    color: "transparent"
-                    Text {
-                        color:"white"
-                        text: qsTr("下一章")
-
-                    }
+                SettingButton{
+                    id:brightness
+                    width: 30;
+                    height: 40;
+                    buttonText: qsTr("亮度")
+                    buttonIconPath: "../Images/brightness.png"
+                    buttonBackColor: "transparent"
                     MouseArea{
                         anchors.fill: parent;
                         onClicked: {
-                            if(readCatalog.currentChart<readCatalog.chartCount()-1){
-                                readCatalog.currentChart++;
-                                view.contentX=0;
-                                view.contentY=0;
-                            }
+                            showBrightNessAnimation.start();
+                            footSetter.isBrightNess=1;
+                            view.isSetting=0;
+
+                        }
+
+                    }
+                }
+                SettingButton{
+                    id:nightModel
+                    width: 30;
+                    height: 40;
+                    buttonText: qsTr("夜间")
+                    buttonIconPath: "../Images/nightmodel.png"
+                    buttonBackColor: "transparent"
+                    MouseArea{
+                        anchors.fill: parent;
+                        onClicked: {
+                            footSetter.isNeight=!footSetter.isNeight;
+                            nightModel.buttonIconPath=footSetter.isNeight?"../Images/nightmodel.png":"../Images/brightness.png"
+
+                        }
+
+                    }
+                }
+                SettingButton{
+                    id:set;
+                    width: 30;
+                    height: 40;
+                    buttonText: qsTr("设置")
+                    buttonIconPath: "../Images/set.png"
+                    buttonBackColor: "transparent"
+                    MouseArea{
+                        anchors.fill: parent
+                        onClicked: {
+                            footSetter.isSetting=!footSetter.isSetting;
+                            showSettingBottomAnimation.start();
+                            view.isSetting=0;
                         }
                     }
                 }
-        }
-        RowLayout{
-            anchors.bottom: parent.bottom;
-            anchors.bottomMargin: 10;
-            anchors.left: parent.left;
-            anchors.leftMargin: 40;
-            anchors.right: parent.right;
-            anchors.rightMargin: 40;
-            height: 40;
-
-
-            // spacing:10;
-            SettingButton{
-                id:catalog;
-                width: 30;
-                height: 40;
-                buttonText :qsTr("目录")
-                buttonIconPath:"../Images/catalog.png";
-                buttonBackColor: "transparent";
-                MouseArea{
-                    anchors.fill: parent;
-                    onClicked: {
-                        showCatalogAnimation.start();
-                        footSetter.isCatalogView=1;
-                        view.isSetting=0;
-                    }
+            }
+            ParallelAnimation{
+                id:showFoot;
+                PropertyAnimation{
+                    id: showFootY;
+                    target: footSetter;
+                    property:"y";
+                    from:root.height+footSetter.height;
+                    to:root.height-footSetter.height;
+                    duration: 1000
+                }
+                PropertyAnimation{
+                    id: showFootOpacy;
+                    target: footSetter;
+                    property:"opacity";
+                    from:0
+                    to:0.9
+                    duration: 1
                 }
             }
-            SettingButton{
-                id:brightness
-                width: 30;
-                height: 40;
-                buttonText: qsTr("亮度")
-                buttonIconPath: "../Images/brightness.png"
-                buttonBackColor: "transparent"
-                MouseArea{
-                    anchors.fill: parent;
-                    onClicked: {
-                        showBrightNessAnimation.start();
-                        footSetter.isBrightNess=1;
-                        view.isSetting=0;
-
-                    }
-
-                }
-            }
-            SettingButton{
-                id:nightModel
-                width: 30;
-                height: 40;
-                buttonText: qsTr("夜间")
-                buttonIconPath: "../Images/nightmodel.png"
-                buttonBackColor: "transparent"
-                MouseArea{
-                    anchors.fill: parent;
-                    onClicked: {
-                        footSetter.isNeight=!footSetter.isNeight;
-                        nightModel.buttonIconPath=footSetter.isNeight?"../Images/nightmodel.png":"../Images/brightness.png"
-
-                    }
-
-                }
-            }
-            SettingButton{
-                id:set;
-                width: 30;
-                height: 40;
-                buttonText: qsTr("设置")
-                buttonIconPath: "../Images/set.png"
-                buttonBackColor: "transparent"
-                MouseArea{
-                    anchors.fill: parent
-                    onClicked: {
-                        footSetter.isSetting=!footSetter.isSetting;
-                        showSettingBottomAnimation.start();
-                        view.isSetting=0;
-                    }
-                }
-            }
-        }
-        ParallelAnimation{
-            id:showFoot;
-            PropertyAnimation{
-                id: showFootY;
-                target: footSetter;
-                property:"y";
-                from:root.height+footSetter.height;
-                to:root.height-footSetter.height;
-                duration: 1000
-            }
-            PropertyAnimation{
-                id: showFootOpacy;
-                target: footSetter;
-                property:"opacity";
-                from:0
-                to:0.9
-                duration: 1
-            }
-        }
-    }
-
+           }
+      }
     PopupCatalog{
         id:showCatalogs;
         height: parent.height;
@@ -444,9 +432,9 @@ Rectangle{
         z:3;
         visible: footSetter.isCatalogView;
         opacity: 0;
-        cataModel: readCatalog
-        backColor: root.backcolor;
-        fontColor: root.fontcolor;
+        cataModel: Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).charts
+        backColor: Settings.bookSetting.back_Color;
+        fontColor: Settings.bookSetting.font_Color;
         ParallelAnimation{
             id:showCatalogAnimation;
             PropertyAnimation{
@@ -499,8 +487,7 @@ Rectangle{
         id:showSettingBottom;
         visible: footSetter.isSetting
         width: parent.width;
-        backgroundColor:fontcolor
-        fontSize:root.fontSize;
+        backgroundColor:footColor
         height: 200;
         y:root.height+height;
         z:2;

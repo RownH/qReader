@@ -2,10 +2,11 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.0
 import "../View"
+import "../"
 Rectangle{
     id:root1;
-    property var backColor:"black";
-    property var fontColor: "white";
+    property var backColor;
+    property var fontColor;
     property var borderParent:"1";
     property var cataModel;
     color: backColor;
@@ -25,7 +26,7 @@ Rectangle{
         Text {
             anchors.fill:parent;
             anchors.centerIn: parent.Center
-            text:cataModel.chartAt(cataModel.currentChart).name;
+            text:Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).bookName;
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignLeft
             color: fontColor;

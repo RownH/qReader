@@ -10,6 +10,12 @@
 #include<background_setting.h>
 #include<curpage_setting.h>
 #include<theme_setting.h>
+#define WHITE 1
+#define YELLOW 2
+#define BISQUE 3//暗黄色
+#define BLACK 4
+#define GREEN 5
+#define BLACKISH_GREEN 6
 class Book_settings : public QObject
 {
     Q_OBJECT
@@ -19,12 +25,12 @@ public:
     //背景设置
     Q_PROPERTY(QString back_Muic READ back_Muic WRITE setback_Muic NOTIFY back_MuicChanged)
     Q_PROPERTY(QString back_Image READ back_Image WRITE setback_Image NOTIFY back_ImageChanged)
-    Q_PROPERTY(QColor back_Color READ back_Color WRITE setback_Color NOTIFY back_ColorChanged)
+    Q_PROPERTY(QString back_Color READ back_Color WRITE setback_Color NOTIFY back_ColorChanged)
 
 
     //字体设置
     Q_PROPERTY(int font_Size READ font_Size WRITE setfont_Size NOTIFY font_SizeChanged)
-    Q_PROPERTY(QColor font_Color READ font_Color WRITE setfont_Color NOTIFY font_ColorChanged)
+    Q_PROPERTY(QString font_Color READ font_Color WRITE setfont_Color NOTIFY font_ColorChanged)
 
 
     //主题设置
@@ -38,10 +44,10 @@ public:
 signals:
     void back_MuicChanged(QString );
     void back_ImageChanged(QString );
-    void back_ColorChanged(QColor index);
+    void back_ColorChanged(QString index);
     void font_SizeChanged(int index);
 
-    void font_ColorChanged(QColor index);
+    void font_ColorChanged(QString index);
     void cur_PageMethodChanged(int index);
     void themeChanged(int index);
 
@@ -58,16 +64,16 @@ public:
     void setback_Image(QString);
 
     //背景颜色
-    QColor back_Color()const;
-    void setback_Color(QColor color);
+    QString back_Color()const;
+    void setback_Color(QString color);
 
     //字体大小
     int font_Size()const;
     void setfont_Size(int size);
 
     //字体颜色
-    QColor font_Color()const;
-    void setfont_Color(QColor color);
+    QString font_Color()const;
+    void setfont_Color(QString color);
 
     //设置主题
     int theme()const;

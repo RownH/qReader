@@ -14,11 +14,11 @@ QString background_setting::getCurrentImg()const
     return  m_Img[currentImg];
 }
 
-QColor background_setting::getBackColor()const
+QString background_setting::getBackColor()const
 {
     return m_backColor;
 }
-void background_setting::setBackColor(QColor color)
+void background_setting::setBackColor(QString color)
 {
     m_backColor=color;
 

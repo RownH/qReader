@@ -1,8 +1,9 @@
 #include "book_settings.h"
+#include<QDebug>
 
 Book_settings::Book_settings(QObject *parent) : QObject(parent)
 {
-
+    settheme(1);
 }
 QString Book_settings::back_Muic()const
 {
@@ -27,12 +28,12 @@ void Book_settings::setback_Image(QString path)
     back_ImageChanged(path);
 }
 
-QColor Book_settings::back_Color() const
+QString Book_settings::back_Color() const
 {
     return  Back_Setting.getBackColor();
 }
 
-void Book_settings::setback_Color(QColor color)
+void Book_settings::setback_Color(QString color)
 {
     Back_Setting.setBackColor(color);
     back_ColorChanged(color);
@@ -48,12 +49,12 @@ void Book_settings::setfont_Size(int size)
     Theme_Setting.m_fontSet.setFontSize(size);
     font_SizeChanged(size);
 }
-QColor Book_settings::font_Color() const
+QString Book_settings::font_Color() const
 {
     return Theme_Setting.m_fontSet.getFontColor();
 }
 
-void Book_settings::setfont_Color(QColor color)
+void Book_settings::setfont_Color(QString color)
 {
     Theme_Setting.m_fontSet.setFontColor(color);
     font_ColorChanged(color);
@@ -66,8 +67,46 @@ int Book_settings::theme() const
 
 void Book_settings::settheme(int theme)
 {
+    if(Theme_Setting.Theme()==theme)return;
     Theme_Setting.setTheme(theme);
-     themeChanged(theme);
+    switch (theme) {
+        case WHITE:{
+              setback_Color("#F0F0F0");
+              setfont_Color("BLACK");
+              break;
+        }
+        case YELLOW:{
+                setback_Color("#D8C0A8");
+                setfont_Color("BLACK");
+                break;
+            }
+        case BISQUE:{
+                setback_Color("#484848");
+                setfont_Color("WHITE");
+                break;
+        }
+        case BLACK:{
+                setback_Color("#C0F0D8");
+                setfont_Color("BLACK");
+                break;
+        }
+        case GREEN:{
+                setback_Color("#001830");
+                setfont_Color("WHITE");
+                break;
+        }
+        case BLACKISH_GREEN:{
+            setback_Color("#336666");
+            setfont_Color("WHITE");
+            break;
+        }
+        default:{
+            setback_Color("black");
+            setfont_Color("white");
+            break;
+        }
+    }
+    themeChanged(theme);
 }
 
 int Book_settings::cur_PageMethod() const

@@ -5,7 +5,7 @@ Read_View::Read_View(QObject *parent) : QObject(parent)
        m_currentBook=0;
        for (int i=0;i<20;i++) {
             Reader_Book *a=new Reader_Book();
-            a->setBookName(i+"本书");
+            a->setBookName(QString::number(i)+"本书");
             Book_shelf.append(a);
        }
 }

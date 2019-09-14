@@ -4,17 +4,16 @@ Rectangle{
     property alias buttonIconPath: buttonIconPath.source
     property alias buttonIconWidth: buttonIconPath.width
     property alias buttonIconHeight: buttonIconPath.height
-    color: "black"
+    color: "transparent"
     Rectangle{
         id:button;
+        color: "transparent"
         anchors.top: parent.top;
         anchors.topMargin: 3;
         width: parent.width;
         height: parent.height;
         radius: parent.height/2;
-        color: "black"
         Image {
-
             anchors.verticalCenter: parent.verticalCenterl
             anchors.horizontalCenter: parent.horizontalCenter
             width: buttonIconWidth

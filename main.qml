@@ -37,6 +37,7 @@ Window {
             onOpenSource: {
                 console.log(index);
                 read.visible=true;
+               Settings.bookShelf.currentBook=index;
             }
         }
 

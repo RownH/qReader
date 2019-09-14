@@ -7,6 +7,7 @@ import QtQuick 2.4
 import QtQuick.Window 2.2
 import QtQuick.Controls 1.2
 import QtQuick.Controls.Styles 1.2
+import "../"
 Item {
     id: mainView
     property Component catalogs: catalogs;
@@ -25,22 +26,22 @@ Item {
                 id:view
                 width: parent.width;
                 height: parent.height
-                model: catalogoModel.charts;
+                model: Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).charts;
                 delegate: Rectangle{
                     width: parent.width;
-                    height: 30;
+                    height: 50;
                     color: backColor;
                     Text {
                         anchors.fill: parent;
                         text: model.name
-                        color:index===catalogoModel.currentChart? "orange": fontColor
+                        color:index===Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).currentChart? "orange": fontColor
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignLeft
                     }
                     MouseArea{
                         anchors.fill: parent;
                         onClicked: {
-                            catalogoModel.currentChart=index;
+                           Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).currentChart=index;
                         }
                     }
                     border.color: "#eeeeee";

@@ -10,12 +10,12 @@ class font_setter
 public:
     explicit font_setter();
     int getFontSize()const;
-    QColor getFontColor()const;
+    QString getFontColor()const;
     void setFontSize(int Size);
-    void setFontColor(QColor Color);
+    void setFontColor(QString Color);
 private:
     int m_fontSize;
-    QColor m_fontColor;
+    QString m_fontColor;
 };
 
 #endif // FONT_SETTER_H
