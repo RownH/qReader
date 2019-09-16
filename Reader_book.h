@@ -32,8 +32,6 @@ public:
    void setBookSource(QString booksource);
    void setContent(QString content);
 
-
-
    unsigned int lastVisitedTime();
    void setLastVisitedTime(unsigned int lastTime);
 
@@ -57,6 +55,7 @@ public:
     static int chartCount(QQmlListProperty<Book_chapter>*);
     static Book_chapter * chartAt(QQmlListProperty<Book_chapter>*,int index);
     static void clearCharts(QQmlListProperty<Book_chapter>*);
+
 
 private:
     QString m_image;

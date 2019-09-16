@@ -1,17 +1,19 @@
 #include "Reader_book.h"
-
+#include<QDir>
+#include<QTextStream>
+#include<QDebug>
 Reader_Book::Reader_Book(QObject *parent) : QObject(parent)
 {
         m_currentPage=0;
         m_currentChart=0;
-        for (int i=0;i<100;i++) {
-           Book_chapter * a=new Book_chapter();
-           QString str=i+"内容章内容章内容章内容章内容章\n内容章内容章内容章内容章内容章内容章内容章内容\n章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章\n内容章内容章\n内容章内容章内容章内容章内容章内容章内容章内容\n章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容\n章内容章内容章内容章内容章内容章内容章内容章\n内容章内容\n章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章\n内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章\n内容章内容章内容\n内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容\n章内容\n章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容\n章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内\n容章内容章内容章内容章内容章内容章内容章内容章内容内容章内容章内容章内容章\n内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内\n容章内容章\n内容章内容章内容章内容章内容章内容章内容内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容内容章内容章内容章内容章内容章内容章内容章内\n容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章\n内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章\n内容章内容章内容章内容\n章内容章内容章内容章内容章内容章内容内容章内容章内容章内容章内容章内容章\n内容章内容章内容章内\n容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容内容章内容章内容章内容章内容章内容章内容章内容章内容章\n内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内\n容内容章内容章内容章内容章内容章内容章内容\n章内容章内容章内容章内容章内容章内容章内容章\n内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章\n内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章\n内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容\n章内容章内容章内容内\n容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内容章内\n容章内容章内容章内容章内容章内容\n章内容章内容章内容章内容章内容章内容章内容内容章内容章内容章内容章内容章内容章内容章\n内容章内容章内容章内容章内容章内容章内容章内容章\n内容章内容章内容章内容章内容章内容章内容章内容章\n内容\n章内容章内容\n章内容章内容章内容章内容章内容章内容章内容\n章内容章内容 ";
-           a->setStr(str);
-           a->setName(QString::number(i)+"章");
-           m_charts.append(a);
-        }
+        m_name=" ";
+        m_bookSource="";
+        m_image="";
+        m_content=" ";
+        //loadChapter();
+        //第一次打开时也需要加载
 }
+
 
 int Reader_Book::currentPage() const
 {
@@ -43,6 +45,7 @@ void Reader_Book::setBookName(QString name)
  }
 void Reader_Book::setCurrentChart(int chart){
     m_currentChart=chart;
+    m_charts[m_currentChart]->setStr("");
     emit currentChartChanged(chart);
 }
 void Reader_Book::setBookSource(QString booksource){
@@ -53,6 +56,7 @@ void Reader_Book::setContent(QString content){
     m_content=content;
     emit contentChanged(content);
 }
+
 
 unsigned int Reader_Book::lastVisitedTime()
 {
@@ -82,7 +86,9 @@ QQmlListProperty<Book_chapter> Reader_Book::charts(){
     m_charts.append(chapter);
  }
  Book_chapter *Reader_Book::chartAt(int index){
-     return  m_charts.at(index);
+     if(index>=0)
+    return  m_charts.at(index);
+     return nullptr;
  }
  void Reader_Book::clearCharts(){
       for (auto &i:m_charts)
@@ -109,5 +115,5 @@ QQmlListProperty<Book_chapter> Reader_Book::charts(){
 
  void Reader_Book::clearCharts(QQmlListProperty<Book_chapter> *list)
  {
-      reinterpret_cast<Reader_Book*>(list->data)->clearCharts();
+     reinterpret_cast<Reader_Book*>(list->data)->clearCharts();
  }

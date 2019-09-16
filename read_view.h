@@ -16,6 +16,7 @@ public:
     Q_PROPERTY(int currentBook READ currentBook WRITE setCurrentBook NOTIFY currentBookChanged)
 signals:
      void currentBookChanged(int);
+
 public slots:
      QQmlListProperty<Reader_Book> books();
      int booksCount();
@@ -30,7 +31,8 @@ public:
     void sorted();
     int currentBook();
     void setCurrentBook(int index);
-
+    void loadDir(QString path="/root/qml/qReader/book/");
+    void loadBook(QString path);
     static void appendBooks(QQmlListProperty<Reader_Book>*,Reader_Book *chapter);
     static int booksCount(QQmlListProperty<Reader_Book>*);
     static Reader_Book * booksAt(QQmlListProperty<Reader_Book>*,int index);

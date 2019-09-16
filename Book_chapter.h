@@ -11,14 +11,16 @@ class Book_chapter : public QObject
     Q_PROPERTY(QString str READ str WRITE setStr NOTIFY strChanged)
 public:
     explicit Book_chapter(QObject *parent = nullptr);
+    explicit Book_chapter(QString source,QString name,QObject *parent = nullptr);
 
     QString name()const;
     QString source()const;
-    QString str()const;
+    QString str();
 
     void setSource(QString source);
     void setName(QString name);
     void setStr(QString str);
+
 signals:
     void sourceChanged();
     void nameChanged();

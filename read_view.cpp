@@ -1,14 +1,13 @@
 #include "read_view.h"
-
+#include<QDir>
+#include<QDebug>
 Read_View::Read_View(QObject *parent) : QObject(parent)
 {
        m_currentBook=0;
-       for (int i=0;i<20;i++) {
-            Reader_Book *a=new Reader_Book();
-            a->setBookName(QString::number(i)+"本书");
-            Book_shelf.append(a);
-       }
+
+       loadDir();
 }
+
 
 QQmlListProperty<Reader_Book> Read_View::books()
 {
@@ -32,11 +31,17 @@ void Read_View::appendBooks(Reader_Book *chapter)
 
 Reader_Book *Read_View::booksAt(int index)
 {
-    return Book_shelf.at(index);
+
+    if(index>=0)
+        return Book_shelf.at(index);
+    return nullptr;
 }
 
 void Read_View::clearBooks()
 {
+    for(int i=0;i<Book_shelf.count();i++){
+        delete  Book_shelf[i];
+    }
     Book_shelf.clear();
 }
 
@@ -56,6 +61,29 @@ void Read_View::setCurrentBook(int index)
     if(index==m_currentBook)return;
     m_currentBook=index;
     currentBookChanged(index);
+}
+
+void Read_View::loadDir(QString path)
+{
+    QDir Dir(path);
+    if(!Dir.exists())return ;
+    for (unsigned i=2;i<Dir.count();i++) {
+        loadBook(Dir.absolutePath()+"/"+Dir[i]+"/");
+    }
+}
+void Read_View::loadBook(QString path)
+{
+    QDir Dir(path);
+    if(!Dir.exists())return ;
+    QString temContent;
+    QString temName;
+    Reader_Book *temBook=new Reader_Book;
+    for (unsigned i=2;i<Dir.count();i++) {
+          temName=Dir.absolutePath()+"/"+Dir[i];
+          Book_chapter *chapt=new Book_chapter(temName,Dir[i]);
+          temBook->appendChart(chapt);
+    }
+    Book_shelf.append(temBook);
 }
 
 
