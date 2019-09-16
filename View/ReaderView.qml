@@ -61,7 +61,6 @@ Rectangle{
                     color: Settings.bookSetting.font_Color;
                     font.pixelSize: Settings.bookSetting.font_Size
                     text:Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).chartAt(Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).currentChart).str
-
                     wrapMode: Text.WrapAnywhere
                     onTextChanged: {
                         view.contentHeight=root.height>readerText.height? root.height:readerText.height;
@@ -70,7 +69,6 @@ Rectangle{
                 MouseArea{
                     anchors.fill: parent;
                     onClicked: {
-                        console.log(mouseY%root.height,root.height-showBrightNess.height);
                         if(footSetter.isBrightNess==1 && mouseY%root.height<root.height-showBrightNess.height){
                                 footSetter.isBrightNess=0;
                         }

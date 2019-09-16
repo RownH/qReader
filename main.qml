@@ -23,45 +23,31 @@ Window {
                   GradientStop { position: 1.0; color: "#5fc9f8"; }
               }
     }
-
     GridView{
         id:view;
         anchors.fill: parent;
         width: parent.width;
         height: parent.height;
-
         cellWidth: 1/3.0 *parent.width;
         cellHeight: 1/3.0*parent.height;
+
         model: Settings.bookShelf.books;
         delegate:  Book_ShelfItem{
+            width: view.cellWidth;
+            height: view.cellHeight;
             onOpenSource: {
-                console.log(index);
                 read.visible=true;
                Settings.bookShelf.currentBook=index;
             }
         }
-
     }
-
-    /*
-    ListView{
-            id:view;
-            width: parent.width;
-            height: parent.height;
-            model: Settings.bookShelf.books;
-            delegate:  ListItem{
-            }
-    }
-        */
     ReaderView{
         id:read;
         visible: false;
         width: 400;
         height: 600;
     }
-    Component.onCompleted: {
-        console.log(Settings.bookShelf.currentBook,Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).bookName);
-    }
+
 
 }
 

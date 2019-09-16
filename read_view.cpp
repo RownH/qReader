@@ -53,6 +53,7 @@ int Read_View::currentBook()
 
 void Read_View::setCurrentBook(int index)
 {
+    if(index==m_currentBook)return;
     m_currentBook=index;
     currentBookChanged(index);
 }
