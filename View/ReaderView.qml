@@ -1,5 +1,5 @@
 
-import QtQuick 2.0
+import QtQuick 2.12
 import QtQuick.Controls 2.5
 
 import QtQuick.Layouts 1.3
@@ -54,7 +54,7 @@ Rectangle{
                 width: parent.width;
                 height: parent.height;
                 color: "transparent";
-                TextArea {
+                TextEdit {
                     id:readerText;
                     width: parent.width
                     readOnly: true;
@@ -65,6 +65,9 @@ Rectangle{
                     onTextChanged: {
                         view.contentHeight=root.height>readerText.height? root.height:readerText.height;
                     }
+                   horizontalAlignment:Settings.bookSetting.alignment_method;
+                    padding: 20
+
                 }
                 MouseArea{
                     anchors.fill: parent;
