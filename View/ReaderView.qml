@@ -38,6 +38,18 @@ Rectangle{
         height: parent.height-footer.height-fonter.height;
         anchors.top: fonter.bottom;
         color: Settings.bookSetting.back_Color
+        property var state: "base";
+        property bool refresh: state == "pulled" ? true : false
+
+        states: [
+               State {
+                   name: "base"; when: view.contentY >= -120//listWorkSheet列表控件
+               },
+               State {
+                   name: "pulled"; when: view.contentY < -120//listWorkSheet列表控件
+
+               }
+           ]
         Flickable {
 
             id: view
@@ -48,8 +60,27 @@ Rectangle{
 
             property var isSetting: 0
             //y:mouse.y-contentY
+            onDragEnded: {
+                console.log(view.contentY-readerText.height)
+                if (view.contentY< -60) {
+                        if(Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).currentChart<1){
 
+                        }
+                        else{
+                            Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).currentChart--;
+                            view.contentX=0;
+                            view.contentY=0;
+                        }
+                    }
+                else if(view.contentY-readerText.height>-500){
+                    if(Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).currentChart<Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).chartCount()-1){
+                        Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).currentChart++;
+                        view.contentX=0;
+                        view.contentY=0;
+                    }
 
+                }
+            }
             Rectangle{
                 width: parent.width;
                 height: parent.height;
