@@ -17,6 +17,7 @@ Rectangle{
     currentChart:当前章数
     */
     //页头
+
     Rectangle{
         id:fonter;
         width: parent.width;

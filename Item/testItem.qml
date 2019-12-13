@@ -1,7 +1,13 @@
 import QtQuick 2.12
-import "../"
 Rectangle{
-    Component.onCompleted: {
-        console.log(Settings.Theme.font_Size)
+    Rectangle{
+           width: 100;
+           height: 100;
+           border.color: "red";
+        TextInput{
+            anchors.fill: parent;
+            text: "a";
+            readOnly: false;
+        }
     }
 }

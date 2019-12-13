@@ -32,6 +32,11 @@ public:
     Q_PROPERTY(int font_Size READ font_Size WRITE setfont_Size NOTIFY font_SizeChanged)
     Q_PROPERTY(QString font_Color READ font_Color WRITE setfont_Color NOTIFY font_ColorChanged)
 
+    //对齐方式
+    Q_PROPERTY(int alignment_method READ alignment_method WRITE setAlignment_method NOTIFY alignment_methodChanged)
+
+    //字距
+    Q_PROPERTY(double word_spcing READ word_spcing WRITE setWord_spcing NOTIFY word_spcingChanged)
 
     //主题设置
     Q_PROPERTY(int theme READ theme WRITE settheme NOTIFY themeChanged)
@@ -41,6 +46,8 @@ public:
     Q_PROPERTY(bool full_ScreenCur READ full_ScreenCur WRITE setfull_ScreenCur NOTIFY full_ScreenCurChanged)
     Q_PROPERTY(bool auto_CurPage READ auto_CurPage WRITE setauto_CurPage NOTIFY auto_CurPageChanged)
     Q_PROPERTY(bool horizen_Scrren READ horizen_Scrren WRITE sethorizen_Scrren NOTIFY horizen_ScrrenChanged)
+
+
 signals:
     void back_MuicChanged(QString );
     void back_ImageChanged(QString );
@@ -54,10 +61,21 @@ signals:
     void full_ScreenCurChanged(bool yesOrNo);
     void auto_CurPageChanged(bool yesOrNo);
     void horizen_ScrrenChanged(bool yesOrNo);
+
+    void alignment_methodChanged(int type);
+    void word_spcingChanged(double spcing);
 public:
     //背景音乐
     QString back_Muic()const;
     void setback_Muic(QString path);
+
+    //对齐方式
+    int alignment_method()const;
+    void setAlignment_method(int index);
+
+    //字距
+    double word_spcing()const;
+    void setWord_spcing(double spacing);
 
     //背景图片
     QString back_Image()const;

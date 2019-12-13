@@ -77,42 +77,75 @@ Rectangle{
                     SettingButton1{
                         width: 50;
                         height: 30;
-                        radius: 2
                         buttonIconPath: "../Images/right_Alignment.png"
+                        border.color:  Settings.bookSetting.alignment_method===TextEdit.AlignRight?"red":"#eeeeee";
                         buttonIconWidth: width/2
                         buttonIconHeight: height
+                        MouseArea{
+                            anchors.fill: parent;
+                            onClicked: {
+                                Settings.bookSetting.alignment_method=TextEdit.AlignRight;//右对齐
+                            }
+                        }
                     }
                     SettingButton1{
                         width: 50;
                         height: 30;
-                        radius: 2
                         buttonIconPath: "../Images/right_Alignment1.png"
+                        border.color:  Settings.bookSetting.alignment_method===TextEdit.AlignLeft?"red":"#eeeeee";
+
                         buttonIconWidth: width/2
                         buttonIconHeight: height
+                        MouseArea{
+                            anchors.fill: parent;
+                            onClicked: {
+                                Settings.bookSetting.alignment_method=TextEdit.AlignLeft;//左对齐
+                            }
+                        }
                     }
                     SettingButton1{
                         width: 50;
                         height: 30;
-                        radius: 2
                         buttonIconPath: "../Images/right_Alignment2.png"
-                         buttonIconWidth: width/2
-                         buttonIconHeight: height
+                        border.color:  Settings.bookSetting.alignment_method===TextEdit.AlignHCenter?"red":"#eeeeee";
+
+                        buttonIconWidth: width/2
+                        buttonIconHeight: height
+                        MouseArea{
+                            anchors.fill: parent;
+                            onClicked: {
+                                Settings.bookSetting.alignment_method=TextEdit.AlignHCenter;//居中对齐
+                            }
+                        }
                     }
                     SettingButton1{
                         width: 50;
                         height: 30;
-                        radius: 2
                         buttonIconPath: "../Images/globalRegistration.png"
+                        border.color:  Settings.bookSetting.alignment_method===3?"red":"#eeeeee";
                         buttonIconWidth: width/2
                         buttonIconHeight: height
+                        MouseArea{
+                            anchors.fill: parent;
+                            onClicked: {
+                                Settings.bookSetting.alignment_method=3;//左对齐
+
+                            }
+                        }
                     }
                     SettingButton1{
                         width: 50;
                         height: 30;
-                        radius: 2
                         buttonIconPath: "../Images/verticalAlignment.png"
+                        border.color:  Settings.bookSetting.alignment_method===5?"red":"#eeeeee";
                         buttonIconWidth: width/2
                         buttonIconHeight: height
+                        MouseArea{
+                            anchors.fill: parent;
+                            onClicked: {
+                                Settings.bookSetting.alignment_method=5;//左对齐
+                            }
+                        }
                     }
                     SettingButton1{
                         width: 30;

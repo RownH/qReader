@@ -23,3 +23,24 @@ void font_setter::setFontColor(QString Color)
         m_fontColor=Color;
 
 }
+
+int font_setter::getAlignment() const
+{
+    return  m_alignment;
+}
+
+void font_setter::setAlignment(int Alignment)
+{
+    m_alignment=Alignment;
+}
+
+double font_setter::getWordSpcing() const
+{
+    return m_word_spacing;
+}
+
+void font_setter::setWordSpcing(double word_spcing)
+{
+       m_word_spacing=word_spcing;
+}
+

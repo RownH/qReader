@@ -16,6 +16,29 @@ void Book_settings::setback_Muic(QString path)
     back_MuicChanged(path);
 }
 
+int Book_settings::alignment_method() const
+{
+    return Theme_Setting.m_fontSet.getAlignment();
+}
+
+void Book_settings::setAlignment_method(int index)
+{
+    Theme_Setting.m_fontSet.setAlignment(index);
+    alignment_methodChanged(index);
+}
+
+double Book_settings::word_spcing() const
+{
+    return Theme_Setting.m_fontSet.getWordSpcing();
+}
+
+void Book_settings::setWord_spcing(double spacing)
+{
+    Theme_Setting.m_fontSet.setWordSpcing(spacing);
+    word_spcingChanged(spacing);
+
+}
+
 QString Book_settings::back_Image() const
 {
     return Back_Setting.getCurrentImg();

@@ -5,14 +5,14 @@ Rectangle{
     property alias buttonIconWidth: buttonIconPath.width
     property alias buttonIconHeight: buttonIconPath.height
     color: "transparent"
+    radius: parent.height/2;
     Rectangle{
         id:button;
         color: "transparent"
         anchors.top: parent.top;
-        anchors.topMargin: 3;
+
         width: parent.width;
         height: parent.height;
-        radius: parent.height/2;
         Image {
             anchors.verticalCenter: parent.verticalCenterl
             anchors.horizontalCenter: parent.horizontalCenter
@@ -23,6 +23,6 @@ Rectangle{
             verticalAlignment: Qt.AlignVCenter
             horizontalAlignment: Qt.AlignHCenter
         }
-        border.color: "#eeeeee"
+
     }
 }
