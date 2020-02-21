@@ -32,7 +32,7 @@ void Read_View::appendBooks(Reader_Book *chapter)
 Reader_Book *Read_View::booksAt(int index)
 {
 
-    if(index>=0)
+    if(index>=0 && Book_shelf.size()>0)
         return Book_shelf.at(index);
     return nullptr;
 }
