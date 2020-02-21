@@ -66,7 +66,9 @@ void Read_View::setCurrentBook(int index)
 void Read_View::loadDir(QString path)
 {
     QDir Dir(path);
-    if(!Dir.exists())return ;
+    if(!Dir.exists()){
+        return ;
+    }
     for (unsigned i=2;i<Dir.count();i++) {
         loadBook(Dir.absolutePath()+"/"+Dir[i]+"/");
     }

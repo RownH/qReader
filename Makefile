@@ -258,6 +258,7 @@ DIST          = Item/BookItem.qml \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/default_pre.prf \
@@ -478,6 +479,7 @@ Makefile: Reader.pro /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf /o
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/default_pre.prf \
@@ -677,6 +679,7 @@ Makefile: Reader.pro /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf /o
 /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/qt_config.prf:
 /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/linux-g++/qmake.conf:
 /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/exclusive_builds.prf:
 /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/toolchain.prf:
 /opt/Qt5.12.3/5.12.3/gcc_64/mkspecs/features/default_pre.prf:
@@ -754,6 +757,8 @@ qrc_qml.cpp: qml.qrc \
 		datemodel.h \
 		Globel_Object.qml \
 		main.qml \
+		book/test/2.text \
+		book/test/1.text \
 		Images/heigtBrightness.png \
 		Images/autoChangePage.png \
 		Images/globalRegistration.png \

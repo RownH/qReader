@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<RCC>
+    <qresource prefix="/">
+        <file alias="Images/catalog.png">Images/catalog.png</file>
+        <file alias="Images/brightness.png">Images/brightness.png</file>
+        <file alias="Images/nightmodel.png">Images/nightmodel.png</file>
+        <file alias="Images/set.png">Images/set.png</file>
+        <file alias="Images/sunsize.png">Images/sunsize.png</file>
+        <file alias="datemodel.cpp">datemodel.cpp</file>
+        <file alias="datemodel.h">datemodel.h</file>
+        <file alias="main.cpp">main.cpp</file>
+        <file alias="Images/back.png">Images/back.png</file>
+        <file alias="Images/lowBrightness.png">Images/lowBrightness.png</file>
+        <file alias="Images/font_size_up.png">Images/font_size_up.png</file>
+        <file alias="Images/font_size_down.png">Images/font_size_down.png</file>
+        <file alias="Images/giftButton.png">Images/giftButton.png</file>
+        <file alias="Images/globalRegistration.png">Images/globalRegistration.png</file>
+        <file alias="Images/HeadsetButton.png">Images/HeadsetButton.png</file>
+        <file alias="Images/heigtBrightness.png">Images/heigtBrightness.png</file>
+        <file alias="Images/listButton.png">Images/listButton.png</file>
+        <file alias="Images/other.png">Images/other.png</file>
+        <file alias="Images/right_Alignment.png">Images/right_Alignment.png</file>
+        <file alias="Images/right_Alignment1.png">Images/right_Alignment1.png</file>
+        <file alias="Images/right_Alignment2.png">Images/right_Alignment2.png</file>
+        <file alias="Images/verticalAlignment.png">Images/verticalAlignment.png</file>
+        <file alias="Images/autoChangePage.png">Images/autoChangePage.png</file>
+        <file alias="Images/horzenScrenChange.png">Images/horzenScrenChange.png</file>
+        <file alias="Images/fullChangePage.png">Images/fullChangePage.png</file>
+        <file alias="qmldir">qmldir</file>
+        <file alias="book/test/1.text">book/test/1.text</file>
+        <file alias="book/test/2.text">book/test/2.text</file>
+        <file alias="book/重生之星空巨龟/001.第一章 重生成龟.txt">book/重生之星空巨龟/001.第一章 重生成龟.txt</file>
+        <file alias="book/重生之星空巨龟/002.第二章 进化.txt">book/重生之星空巨龟/002.第二章 进化.txt</file>
+        <file alias="book/重生之星空巨龟/3.第三章 全民进化.txt">book/重生之星空巨龟/3.第三章 全民进化.txt</file>
+        <file alias="book/颤栗世界/2.第2章 新鲜血肉.txt">book/颤栗世界/2.第2章 新鲜血肉.txt</file>
+        <file alias="book/颤栗世界/3.第3章 无法退出.txt">book/颤栗世界/3.第3章 无法退出.txt</file>
+        <file alias="book/颤栗世界/4.第4章 赶紧迎战.txt">book/颤栗世界/4.第4章 赶紧迎战.txt</file>
+        <file alias="book/颤栗世界/5.第5章 自由奔跑.txt">book/颤栗世界/5.第5章 自由奔跑.txt</file>
+    </qresource>
+</RCC>
