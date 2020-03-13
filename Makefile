@@ -567,8 +567,6 @@ qrc_qml.cpp: qml.qrc \
 		datemodel.h \
 		Globel_Object.qml \
 		main.qml \
-		book/test/2.text \
-		book/test/1.text \
 		Images/heigtBrightness.png \
 		Images/autoChangePage.png \
 		Images/globalRegistration.png \

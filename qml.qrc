@@ -41,8 +41,5 @@
         <file>qmldir</file>
         <file>Globel_Object.qml</file>
         <file>Item/Book_ShelfItem.qml</file>
-        <file>book/test/1.text</file>
-        <file>book/test/2.text</file>
-  
     </qresource>
 </RCC>
