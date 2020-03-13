@@ -6,7 +6,7 @@ QtObject{
     id:root;
     property var bookSetting: BookSetting{}
     property var bookShelf: BookShelf{
-        currentBook: 1;
+        currentBook: 0;
 
     }
 }

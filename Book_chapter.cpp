@@ -1,6 +1,7 @@
 #include "Book_chapter.h"
 #include<QFile>
 #include<QTextStream>
+#include<QTextCodec>
 Book_chapter::Book_chapter(QObject *parent): QObject(parent)
 {
 }

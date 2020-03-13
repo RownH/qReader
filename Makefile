@@ -1517,7 +1517,9 @@ Book_chapter.o: Book_chapter.cpp Book_chapter.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/qcontiguouscache.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/qsharedpointer.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/qshareddata.h \
-		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/qsharedpointer_impl.h
+		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/QTextCodec \
+		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/qtextcodec.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Book_chapter.o Book_chapter.cpp
 
 Reader_book.o: Reader_book.cpp Reader_book.h \
@@ -2285,7 +2287,9 @@ read_view.o: read_view.cpp read_view.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/qfileinfo.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/qfile.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/qfiledevice.h \
-		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/QDebug
+		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/QDebug \
+		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/QTextCodec \
+		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/qtextcodec.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o read_view.o read_view.cpp
 
 theme_setting.o: theme_setting.cpp theme_setting.h \
