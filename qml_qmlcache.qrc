@@ -27,14 +27,6 @@
         <file alias="Images/horzenScrenChange.png">Images/horzenScrenChange.png</file>
         <file alias="Images/fullChangePage.png">Images/fullChangePage.png</file>
         <file alias="qmldir">qmldir</file>
-        <file alias="book/test/1.text">book/test/1.text</file>
-        <file alias="book/test/2.text">book/test/2.text</file>
-        <file alias="book/重生之星空巨龟/001.第一章 重生成龟.txt">book/重生之星空巨龟/001.第一章 重生成龟.txt</file>
-        <file alias="book/重生之星空巨龟/002.第二章 进化.txt">book/重生之星空巨龟/002.第二章 进化.txt</file>
-        <file alias="book/重生之星空巨龟/3.第三章 全民进化.txt">book/重生之星空巨龟/3.第三章 全民进化.txt</file>
-        <file alias="book/颤栗世界/2.第2章 新鲜血肉.txt">book/颤栗世界/2.第2章 新鲜血肉.txt</file>
-        <file alias="book/颤栗世界/3.第3章 无法退出.txt">book/颤栗世界/3.第3章 无法退出.txt</file>
-        <file alias="book/颤栗世界/4.第4章 赶紧迎战.txt">book/颤栗世界/4.第4章 赶紧迎战.txt</file>
-        <file alias="book/颤栗世界/5.第5章 自由奔跑.txt">book/颤栗世界/5.第5章 自由奔跑.txt</file>
+
     </qresource>
 </RCC>

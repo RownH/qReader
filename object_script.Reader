@@ -1,0 +1,16 @@
+Book_chapter.o
+Reader_book.o
+background_setting.o
+book_settings.o
+curpage_setting.o
+datemodel.o
+font_setter.o
+main.o
+read_view.o
+theme_setting.o
+qrc_qml.o
+moc_Book_chapter.o
+moc_Reader_book.o
+moc_book_settings.o
+moc_datemodel.o
+moc_read_view.o
