@@ -10,7 +10,7 @@ Reader_Book::Reader_Book(QObject *parent) : QObject(parent)
         m_bookSource="";
         m_image="";
         m_content=" ";
-        //loadChapter();
+
         //第一次打开时也需要加载
 }
 

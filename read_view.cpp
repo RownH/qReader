@@ -1,10 +1,11 @@
 #include "read_view.h"
 #include<QDir>
 #include<QDebug>
+#include<QTextCodec>
 Read_View::Read_View(QObject *parent) : QObject(parent)
 {
        m_currentBook=0;
-
+       QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF8")); // 改为GBK编码
        loadDir();
 }
 
@@ -32,8 +33,10 @@ void Read_View::appendBooks(Reader_Book *chapter)
 Reader_Book *Read_View::booksAt(int index)
 {
 
-    if(index>=0 && Book_shelf.size()>0)
+    if(index>=0 && Book_shelf.size()>index){
         return Book_shelf.at(index);
+    }
+
     return nullptr;
 }
 
