@@ -34,20 +34,8 @@ SOURCES += \
         curpage_setting.cpp \
         datemodel.cpp \
         font_setter.cpp \
-        httpServer/http_conn.cpp \
-        httpServer/locker.cpp \
-        httpServer/main.cpp \
-        httpServer/test.cpp \
         main.cpp \
         main_qml.cpp \
-        moc_Book_chapter.cpp \
-        moc_Reader_book.cpp \
-        moc_book_settings.cpp \
-        moc_datemodel.cpp \
-        moc_read_view.cpp \
-        qmlcache_loader.cpp \
-        qrc_qml.cpp \
-        qrc_qml_qmlcache.cpp \
         read_view.cpp \
         theme_setting.cpp
 
@@ -78,10 +66,6 @@ HEADERS += \
     curpage_setting.h \
     datemodel.h \
     font_setter.h \
-    httpServer/http_conn.h \
-    httpServer/locker.h \
-    httpServer/test.h \
-    httpServer/threadpool.h \
     moc_predefs.h \
     read_view.h \
     theme_setting.h
