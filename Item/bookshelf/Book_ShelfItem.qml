@@ -30,13 +30,13 @@ Rectangle{
                 openSource(index);
             }
             onEntered: {
-                    delegate.width=root.width-1/5*parent.width;
-                     delegate.height=root.height-1/5.0*parent.height;
-                    delegate.border.color="gold";
+                delegate.width=root.width-1/3*parent.width;
+                delegate.height=root.height-1/3.0*parent.height;
+                delegate.border.color="gold";
             }
             onExited: {
                 delegate.width=root.width-2/5*parent.width;
-                 delegate.height=root.height-2/5.0*parent.height;
+                delegate.height=root.height-2/5.0*parent.height;
                 delegate.border.color="#eeeeee";
             }
         }

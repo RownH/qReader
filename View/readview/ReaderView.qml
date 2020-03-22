@@ -3,9 +3,9 @@ import QtQuick 2.12
 import QtQuick.Controls 2.5
 
 import QtQuick.Layouts 1.3
-import "../Item"
-import "../Popup"
-import"../"
+import "../../Item/bookshelf/readview"
+import "../../Popup"
+import"../../"
 Rectangle{
     id:root;
     property var footColor: "#301818"
@@ -192,14 +192,18 @@ Rectangle{
                     color: "transparent"
                     Image {
                         anchors.fill: parent;
-                        source: "../Images/back.png"
+                        source: "../../Images/readview/back.png"
                     }
                     MouseArea{
                         anchors.fill: parent;
                         onClicked: {
                             root.visible=0;
                             view.isSetting=0;
-
+                            //当点击返回时，顶底部导航栏显示，swipeview滑动界面减去导航栏，并且swipeview可以滑动
+                            topBars.visible=true;
+                            bar.visible=true;
+                            swipeview.height=rootwindow.height - bar.height;
+                            swipeview.interactive=true;
                         }
                     }
                 }
@@ -232,7 +236,7 @@ Rectangle{
                        color: "transparent";
                        Image {
                            anchors.fill: parent;
-                           source: "../Images/giftButton.png"
+                           source: "../../Images/readview/giftButton.png"
                        }
                 }
                 Rectangle{
@@ -242,7 +246,7 @@ Rectangle{
                        color: "transparent";
                        Image {
                            anchors.fill: parent;
-                           source: "../Images/HeadsetButton.png"
+                           source: "../../Images/readview/HeadsetButton.png"
                        }
                 }
                 Rectangle{
@@ -252,7 +256,7 @@ Rectangle{
                        color: "transparent";
                        Image {
                            anchors.fill: parent;
-                           source: "../Images/listButton.png"
+                           source: "../../Images/readview/listButton.png"
                        }
                 }
             }
@@ -373,7 +377,7 @@ Rectangle{
                     width: 30;
                     height: 40;
                     buttonText :qsTr("目录")
-                    buttonIconPath:"../Images/catalog.png";
+                    buttonIconPath:"../../Images/readview/catalog.png";
                     buttonBackColor: "transparent";
                     MouseArea{
                         anchors.fill: parent;
@@ -389,7 +393,7 @@ Rectangle{
                     width: 30;
                     height: 40;
                     buttonText: qsTr("亮度")
-                    buttonIconPath: "../Images/brightness.png"
+                    buttonIconPath: "../../Images/readview/brightness.png"
                     buttonBackColor: "transparent"
                     MouseArea{
                         anchors.fill: parent;
@@ -407,13 +411,13 @@ Rectangle{
                     width: 30;
                     height: 40;
                     buttonText: qsTr("夜间")
-                    buttonIconPath: "../Images/nightmodel.png"
+                    buttonIconPath: "../../Images/readview/nightmodel.png"
                     buttonBackColor: "transparent"
                     MouseArea{
                         anchors.fill: parent;
                         onClicked: {
                             footSetter.isNeight=!footSetter.isNeight;
-                            nightModel.buttonIconPath=footSetter.isNeight?"../Images/nightmodel.png":"../Images/brightness.png"
+                            nightModel.buttonIconPath=footSetter.isNeight?"../../Images/readview/nightmodel.png":"../../Images/readview/brightness.png"
 
                         }
 
@@ -424,7 +428,7 @@ Rectangle{
                     width: 30;
                     height: 40;
                     buttonText: qsTr("设置")
-                    buttonIconPath: "../Images/set.png"
+                    buttonIconPath: "../../Images/readview/set.png"
                     buttonBackColor: "transparent"
                     MouseArea{
                         anchors.fill: parent

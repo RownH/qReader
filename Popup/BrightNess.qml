@@ -24,7 +24,7 @@ import QtQuick.Controls 2.0
                     color: "transparent"
                     Image {
                         anchors.fill: parent;
-                        source: "../Images/lowBrightness.png"
+                        source: "../Images/readview/lowBrightness.png"
                     }
                 }
                 Rectangle{
@@ -48,7 +48,7 @@ import QtQuick.Controls 2.0
                     color: "transparent"
                     Image {
                         anchors.fill: parent;
-                        source: "../Images/heigtBrightness.png"
+                        source: "../Images/readview/heigtBrightness.png"
                     }
                 }
         }
