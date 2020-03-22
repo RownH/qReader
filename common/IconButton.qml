@@ -4,7 +4,8 @@ Item {
     id: button
     width: 24
     height: 24
-
+    property alias iconwidth: icon.width
+     property alias iconheight: icon.height
     property alias rippleColor: ripple.color
     property alias iconSource: icon.source
 

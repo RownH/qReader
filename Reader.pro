@@ -58,6 +58,7 @@ DISTFILES += \
     common/IconButton.qml \
     common/PaperRipple.qml
 
+
 HEADERS += \
     Book_chapter.h \
     Reader_book.h \

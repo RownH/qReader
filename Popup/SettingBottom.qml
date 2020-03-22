@@ -1,6 +1,7 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.5
 import "../Item"
+import "../Item/bookshelf/readview"
 import QtQuick.Layouts 1.3
 import "../"
 Rectangle{

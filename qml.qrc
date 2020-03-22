@@ -1,45 +1,112 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>Item/ListItem.qml</file>
-        <file>Item/BookItem.qml</file>
         <file>Item/testItem.qml</file>
-        <file>View/ReaderView.qml</file>
-        <file>Item/SettingButton.qml</file>
-        <file>Images/catalog.png</file>
-        <file>Images/brightness.png</file>
-        <file>Images/nightmodel.png</file>
-        <file>Images/set.png</file>
-        <file>Images/sunsize.png</file>
         <file>datemodel.cpp</file>
         <file>datemodel.h</file>
         <file>main.cpp</file>
-        <file>Images/back.png</file>
         <file>Popup/PopupCatalog.qml</file>
-        <file>View/CataBottom.qml</file>
         <file>Popup/BrightNess.qml</file>
-        <file>Images/lowBrightness.png</file>
         <file>Popup/SettingBottom.qml</file>
-        <file>Item/SettingButton1.qml</file>
-        <file>Images/font_size_up.png</file>
-        <file>Images/font_size_down.png</file>
-        <file>Item/SettingButton2.qml</file>
-        <file>Images/giftButton.png</file>
-        <file>Images/globalRegistration.png</file>
-        <file>Images/HeadsetButton.png</file>
-        <file>Images/heigtBrightness.png</file>
-        <file>Images/listButton.png</file>
-        <file>Images/other.png</file>
-        <file>Images/right_Alignment.png</file>
-        <file>Images/right_Alignment1.png</file>
-        <file>Images/right_Alignment2.png</file>
-        <file>Images/verticalAlignment.png</file>
-        <file>Item/SettingButton3.qml</file>
-        <file>Images/autoChangePage.png</file>
-        <file>Images/horzenScrenChange.png</file>
-        <file>Images/fullChangePage.png</file>
         <file>qmldir</file>
         <file>Globel_Object.qml</file>
-        <file>Item/Book_ShelfItem.qml</file>
+        <file>common/IconButton.qml</file>
+        <file>common/PaperRipple.qml</file>
+        <file>common/TopBars.qml</file>
+        <file>Images/analyze/analyze_words.png</file>
+        <file>Images/analyze/book.jpg</file>
+        <file>Images/analyze/draw_words.png</file>
+        <file>Images/analyze/men_relationship.png</file>
+        <file>Images/common/back.png</file>
+        <file>Images/guide/analogy_after.png</file>
+        <file>Images/guide/analogy.png</file>
+        <file>Images/guide/books_after.png</file>
+        <file>Images/guide/books.png</file>
+        <file>Images/guide/homepage_after.png</file>
+        <file>Images/guide/homepage.png</file>
+        <file>Images/guide/me_after.png</file>
+        <file>Images/guide/me.png</file>
+        <file>Images/homepage/gridimg/can.png</file>
+        <file>Images/homepage/gridimg/ke.png</file>
+        <file>Images/homepage/gridimg/ming.png</file>
+        <file>Images/homepage/gridimg/shi.png</file>
+        <file>Images/homepage/gridimg/wen.png</file>
+        <file>Images/homepage/gridimg/yan.png</file>
+        <file>Images/homepage/switchimg/android.jpg</file>
+        <file>Images/homepage/switchimg/C++.jpg</file>
+        <file>Images/homepage/switchimg/cocos2d.jpg</file>
+        <file>Images/homepage/switchimg/deeplearning.png</file>
+        <file>Images/homepage/switchimg/learn.jpg</file>
+        <file>Images/homepage/switchimg/PHP.jpg</file>
+        <file>Images/homepage/switchimg/python.jpg</file>
+        <file>Images/homepage/search.png</file>
+        <file>Images/my/headimg.png</file>
+        <file>Images/my/help_big.png</file>
+        <file>Images/my/help.png</file>
+        <file>Images/my/myaccount.png</file>
+        <file>Images/my/mybooks.png</file>
+        <file>Images/my/myinfo.png</file>
+        <file>Images/my/note.png</file>
+        <file>Images/my/ring.png</file>
+        <file>Images/my/setting.png</file>
+        <file>Images/my/sign.png</file>
+        <file>Images/readview/autoChangePage.png</file>
+        <file>Images/readview/back.png</file>
+        <file>Images/readview/brightness.png</file>
+        <file>Images/readview/catalog.png</file>
+        <file>Images/readview/font_size_down.png</file>
+        <file>Images/readview/font_size_up.png</file>
+        <file>Images/readview/fullChangePage.png</file>
+        <file>Images/readview/giftButton.png</file>
+        <file>Images/readview/globalRegistration.png</file>
+        <file>Images/readview/HeadsetButton.png</file>
+        <file>Images/readview/heigtBrightness.png</file>
+        <file>Images/readview/horzenScrenChange.png</file>
+        <file>Images/readview/listButton.png</file>
+        <file>Images/readview/lowBrightness.png</file>
+        <file>Images/readview/nightmodel.png</file>
+        <file>Images/readview/other.png</file>
+        <file>Images/readview/right_Alignment.png</file>
+        <file>Images/readview/right_Alignment1.png</file>
+        <file>Images/readview/right_Alignment2.png</file>
+        <file>Images/readview/set.png</file>
+        <file>Images/readview/sunsize.png</file>
+        <file>Images/readview/verticalAlignment.png</file>
+        <file>Images/shelf/add.png</file>
+        <file>Images/shelf/folder.png</file>
+        <file>Images/shelf/import.png</file>
+        <file>Images/shelf/search.png</file>
+        <file>Images/shelf/wifi.png</file>
+        <file>Item/bookshelf/readview/BookItem.qml</file>
+        <file>Item/bookshelf/readview/ListItem.qml</file>
+        <file>Item/bookshelf/readview/SettingButton.qml</file>
+        <file>Item/bookshelf/readview/SettingButton1.qml</file>
+        <file>Item/bookshelf/readview/SettingButton2.qml</file>
+        <file>Item/bookshelf/readview/SettingButton3.qml</file>
+        <file>Item/bookshelf/AddButton.qml</file>
+        <file>Item/bookshelf/Book_ShelfItem.qml</file>
+        <file>Item/homepage/GridBook.qml</file>
+        <file>Item/homepage/SearchBar.qml</file>
+        <file>Item/BaseTabBar.qml</file>
+        <file>Item/catalog.png</file>
+        <file>View/AnalyzeView.qml</file>
+        <file>View/data.json</file>
+        <file>View/HomeStack.qml</file>
+        <file>View/HomeView.qml</file>
+        <file>View/MineView.qml</file>
+        <file>View/savejson.js</file>
+        <file>View/HomeView/CircleView.qml</file>
+        <file>View/HomeView/GridViews.qml</file>
+        <file>View/HomeView/SortBooks.qml</file>
+        <file>View/HomeView/VideoView.qml</file>
+        <file>View/MineView/Help.qml</file>
+        <file>View/MineView/LoginView.qml</file>
+        <file>View/MineView/MyAccount.qml</file>
+        <file>View/MineView/MyBooks.qml</file>
+        <file>View/MineView/MyInfo.qml</file>
+        <file>View/MineView/MyNotes.qml</file>
+        <file>View/MineView/Setting.qml</file>
+        <file>View/readview/CataBottom.qml</file>
+        <file>View/readview/ReaderView.qml</file>
     </qresource>
 </RCC>
