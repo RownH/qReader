@@ -11,13 +11,12 @@ import "common"
 import Reader 1.0
 import Chapter 1.0
 import BookShelf 1.0
-
 ApplicationWindow {
     id: rootwindow
     visible: true
     width:400
     height: 600
-    title: qsTr("Qml底部导航")
+    title: qsTr("书客")
 
 
     SwipeView {

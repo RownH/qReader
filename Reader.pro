@@ -41,6 +41,7 @@ DISTFILES += \
     Item/BookItem.qml \
     Item/ListItem.qml
 
+
 HEADERS += \
     Book_chapter.h \
     Reader_book.h \

@@ -3,7 +3,6 @@ import QtQuick.Controls 1.4
 import QtQuick.Layouts 1.2
 import QtQuick.Controls.Styles 1.4
 import "../common"
-
 Item{
 
     property var btnwidth: 1/3*analyzetop.width

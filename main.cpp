@@ -6,7 +6,6 @@
 #include<Book_chapter.h>
 #include<book_settings.h>
 #include<read_view.h>
-
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);

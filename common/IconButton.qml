@@ -4,11 +4,10 @@ Item {
     id: button
     width: 24
     height: 24
-
+    property alias iconwidth: icon.width
+     property alias iconheight: icon.height
     property alias rippleColor: ripple.color
     property alias iconSource: icon.source
-    property alias iconwidth: icon.width
-    property alias iconheight: icon.height
 
     signal clicked
 
@@ -18,8 +17,8 @@ Item {
             fill: undefined
             centerIn: parent
         }
-        width: icon.width
-        height: icon.height
+        width: 40
+        height: 40
         radius: 20
         mouseArea: mouseArea
     }
