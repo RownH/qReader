@@ -90,7 +90,7 @@ ApplicationWindow {
                     width: bookshelfview.cellWidth;
                     height: bookshelfview.cellHeight;
                     onOpenSource: {
-                        read.visible=true;
+                        readview.visible=true;
                         //顶、底部导航隐藏
                         topBars.visible=false;
                         basebar.visible=false;
@@ -103,7 +103,7 @@ ApplicationWindow {
                 }
             }
             ReaderView{
-                id:read;
+                id:readview;
                 visible: false;
                 width: rootwindow.width;
                 height: rootwindow.height;

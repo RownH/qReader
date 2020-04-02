@@ -42,7 +42,6 @@
         <file>Images/homepage/search.png</file>
         <file>Images/my/headimg.png</file>
         <file>Images/my/help_big.png</file>
-        <file>Images/my/help.png</file>
         <file>Images/my/myaccount.png</file>
         <file>Images/my/mybooks.png</file>
         <file>Images/my/myinfo.png</file>
@@ -115,5 +114,6 @@
         <file>Images/homepage/sortimg/xiyouji.jpg</file>
         <file>Images/shelf/background.jpg</file>
         <file>Item/homepage/GridBookModel.qml</file>
+        <file>Images/my/mynotes/mynote.png</file>
     </qresource>
 </RCC>

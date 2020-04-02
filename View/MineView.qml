@@ -7,12 +7,12 @@ import "../common"
 
 StackView{
     id:wodepage
-    width: 400
-    height: 500
 
     property bool userLoggedIn: false
-//    LoginView {
-//      z: 1
+    width: 450
+    height: 800
+//    LoginPage {
+//        z: 1
 //      visible: opacity > 0
 //      enabled: visible
 //      opacity: userLoggedIn ? 0 : 1
@@ -24,7 +24,7 @@ StackView{
         id: rectangle
         color: "#ffffff"
         anchors.bottom: parent.verticalCenter
-        anchors.bottomMargin: 0
+        anchors.bottomMargin: parent.height/10
         anchors.top: parent.top
         anchors.topMargin: 0
         anchors.right: parent.right
@@ -32,7 +32,7 @@ StackView{
         anchors.left: parent.left
         anchors.leftMargin: parent.width/40
 
-        IconButton {
+        Button {
             id: button1
             anchors.right: button2.left
             anchors.rightMargin: wodepage.width/50
@@ -42,11 +42,11 @@ StackView{
                 anchors.fill: parent
                 source: "qrc:/Images/my/ring.png"
             }
-            height: wodepage.height*3/50
+            height: wodepage.width*3/40
             width: wodepage.width*3/40
         }
 
-        IconButton {
+        Button {
             id: button2
             anchors.right: parent.right
             anchors.rightMargin: wodepage.width/50
@@ -55,9 +55,8 @@ StackView{
             Image {
                 anchors.fill: parent
                 source: "qrc:/Images/my/setting.png"
-
             }
-            height: wodepage.height*3/50
+            height: wodepage.width*3/40
             width: wodepage.width*3/40
             onClicked: {
                 wodepage.push(shezhi)
@@ -68,11 +67,7 @@ StackView{
         Button {
             id: button3
             flat: true
-            Text {
-                id: myfollow
-                anchors.centerIn: parent
-                text: qsTr("我的关注")
-            }
+            text: qsTr("我的关注")
             anchors.bottom: parent.bottom
             anchors.bottomMargin: wodepage.height/50
             anchors.right: parent.horizontalCenter
@@ -84,11 +79,7 @@ StackView{
         Button {
             id: button4
             flat: true
-            Text {
-                id: mypush
-                anchors.centerIn: parent
-                text: qsTr("我的发布")
-            }
+            text: qsTr("我的发布")
             anchors.bottom: parent.bottom
             anchors.bottomMargin: wodepage.height/50
             anchors.left: parent.horizontalCenter
@@ -120,10 +111,10 @@ StackView{
     Rectangle {
         id: rectangle1
         color: "#ffffff"
-        anchors.top: parent.verticalCenter
+        anchors.top: rectangle.bottom
         anchors.topMargin: 0
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: parent.height/20
+        anchors.bottomMargin: parent.height/5
         anchors.left: parent.left
         anchors.leftMargin: parent.width/20
         anchors.right: parent.right
@@ -134,13 +125,13 @@ StackView{
             rows: 2
             columns: 3
 
-            IconButton {
+            Button {
                 id: button5
-//                flat: true
+                flat: true
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Image {
-                    height: wodepage.height*3/25
+                    height: wodepage.width/6
                     width: wodepage.width/6
                     anchors.centerIn: parent
                     source: "qrc:/Images/my/mybooks.png"
@@ -156,7 +147,8 @@ StackView{
                 Layout.preferredWidth: 80
                 onClicked: {
                     wodepage.push(shuji)
-
+                    MineView.interactive=false
+                    basebar.visible=false
                 }
             }
 
@@ -166,7 +158,7 @@ StackView{
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Image {
-                    height: wodepage.height*3/25
+                    height: wodepage.width/6
                     width: wodepage.width/6
                     anchors.centerIn: parent
                     source: "qrc:/Images/my/note.png"
@@ -182,7 +174,8 @@ StackView{
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                 onClicked: {
                     wodepage.push(biji)
-
+                    MineView.interactive=false
+                    basebar.visible=false
                 }
             }
 
@@ -194,7 +187,7 @@ StackView{
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Image {
-                    height: wodepage.height*3/25
+                    height: wodepage.width/6
                     width: wodepage.width/6
                     anchors.centerIn: parent
                     source: "qrc:/Images/my/myinfo.png"
@@ -210,7 +203,8 @@ StackView{
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {
                     wodepage.push(xinxi)
-
+                    MineView.interactive=false
+                    basebar.visible=false
                 }
             }
 
@@ -221,7 +215,7 @@ StackView{
                 Layout.fillWidth: true
                 font.family: "Courier"
                 Image {
-                    height: wodepage.height*3/25
+                    height: wodepage.width/6
                     width: wodepage.width/6
                     anchors.centerIn: parent
                     source: "qrc:/Images/my/myaccount.png"
@@ -236,7 +230,8 @@ StackView{
                 Layout.preferredWidth: 80
                 onClicked: {
                     wodepage.push(zhanhu)
-
+                    view.interactive=false
+                    bar.visible=false
                 }
             }
 
@@ -246,7 +241,7 @@ StackView{
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Image {
-                    height: wodepage.height*3/25
+                    height: wodepage.width/6
                     width: wodepage.width/6
                     anchors.centerIn: parent
                     source: "qrc:/Images/my/sign.png"
@@ -262,7 +257,8 @@ StackView{
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                 onClicked: {
                     wodepage.push()
-
+                    MineView.interactive=false
+                    basebar.visible=false
                 }
             }
 
@@ -272,7 +268,7 @@ StackView{
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Image {
-                    height: wodepage.height*3/25
+                    height: wodepage.width/6
                     width: wodepage.width/6
                     anchors.centerIn: parent
                     source: "qrc:/Images/my/help_big.png"
@@ -288,7 +284,8 @@ StackView{
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 onClicked: {
                     wodepage.push(banzhu)
-
+                    MineView.interactive=false
+                    basebar.visible=false
                 }
 
             }
@@ -296,248 +293,27 @@ StackView{
     }
     Component{
         id:shuji
-        Rectangle{
-            anchors.fill: parent
-
-            Text {
-                width: 50
-                height: 26
-                text: qsTr("我的书籍")
-                anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: 12
-            }
-
-            Button {
-                anchors.left: parent.left
-                anchors.leftMargin: wodepage.width/50
-                anchors.top: parent.top
-                anchors.topMargin: wodepage.height/40
-                height: wodepage.height*3/50
-                width: wodepage.width*3/40
-                Image {
-                    anchors.fill: parent
-                    source: "qrc:/Images/common/back.png"
-                }
-                onClicked:{
-                    wodepage.clear();
-                }
-            }
-            MyBooks{
-                anchors.top: parent.top
-                anchors.topMargin: 40
-                anchors.right: parent.right
-                anchors.rightMargin: 0
-                anchors.left: parent.left
-                anchors.leftMargin: 0
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 0
-            }
-        }
+        MyBooks{}
     }
     Component{
         id:biji
-        Rectangle{
-            anchors.fill: parent
-
-            Text {
-                width: 50
-                height: 26
-                text: qsTr("我的笔记")
-                anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: 12
-            }
-
-            Button {
-                anchors.left: parent.left
-                anchors.leftMargin: wodepage.width/50
-                anchors.top: parent.top
-                anchors.topMargin: wodepage.height/40
-                height: wodepage.height*3/50
-                width: wodepage.width*3/40
-                Image {
-                    anchors.fill: parent
-                    source: "qrc:/Images/common/back.png"
-                }
-                onClicked:{
-                    wodepage.clear();
-                }
-            }
-            MyNotes{
-                anchors.top: parent.top
-                anchors.topMargin: 40
-                anchors.right: parent.right
-                anchors.rightMargin: 0
-                anchors.left: parent.left
-                anchors.leftMargin: 0
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 0
-            }
-        }
+        MyNotes{}
     }
     Component{
         id:xinxi
-        Rectangle{
-            anchors.fill: parent
-            Text {
-                width: 50
-                height: 26
-                text: qsTr("我的信息")
-                anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: 12
-            }
-
-            Button {
-                anchors.left: parent.left
-                anchors.leftMargin: wodepage.width/50
-                anchors.top: parent.top
-                anchors.topMargin: wodepage.height/40
-                height: wodepage.height*3/50
-                width: wodepage.width*3/40
-                Image {
-                    anchors.fill: parent
-                    source: "qrc:/Images/common/back.png"
-                }
-                onClicked:{
-                    wodepage.clear();
-                }
-            }
-            MyInfo{
-                anchors.top: parent.top
-                anchors.topMargin: 40
-                anchors.right: parent.right
-                anchors.rightMargin: 0
-                anchors.left: parent.left
-                anchors.leftMargin: 0
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 0
-            }
-        }
+        MyInfo{}
     }
     Component{
         id:zhanhu
-        Rectangle{
-            id:rectangle2
-            anchors.fill: parent
-
-            Text {
-                id: element
-                x: 308
-                y: 9
-                width: 50
-                height: 26
-                text: qsTr("我的账户")
-                anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: 12
-            }
-
-            Button {
-                anchors.left: parent.left
-                anchors.leftMargin: wodepage.width/50
-                anchors.top: parent.top
-                anchors.topMargin: wodepage.height/40
-                height: wodepage.height*3/50
-                width: wodepage.width*3/40
-                Image {
-                    anchors.fill: parent
-                    source: "qrc:/Images/common/back.png"
-                }
-                onClicked:{
-                    wodepage.clear();
-                }
-            }
-            MyAccount{
-                anchors.top: parent.top
-                anchors.topMargin: 40
-                anchors.right: parent.right
-                anchors.rightMargin: 0
-                anchors.left: parent.left
-                anchors.leftMargin: 0
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 0
-            }
-        }
+        MyAccount{}
     }
     Component{
         id:banzhu
-        Rectangle{
-            anchors.fill: parent
-
-            Text {
-                id: element
-                width: 30
-                height: 26
-                text: qsTr("帮助")
-                anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: 12
-            }
-
-            Button {
-                anchors.left: parent.left
-                anchors.leftMargin: wodepage.width/50
-                anchors.top: parent.top
-                anchors.topMargin: wodepage.height/40
-                height: wodepage.height*3/50
-                width: wodepage.width*3/40
-                Image {
-                    anchors.fill: parent
-                    source: "qrc:/Images/common/back.png"
-                }
-                onClicked:{
-                    wodepage.clear();
-                }
-            }
-            Help{
-                anchors.top: parent.top
-                anchors.topMargin: 40
-                anchors.right: parent.right
-                anchors.rightMargin: 0
-                anchors.left: parent.left
-                anchors.leftMargin: 0
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 0
-            }
-        }
+        Help{}
     }
     Component{
         id:shezhi
-        Rectangle{
-            id:rectangle2
-            anchors.fill: parent
-
-            Text {
-                width: 30
-                height: 26
-                text: qsTr("设置")
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
-
-            Button {
-                anchors.left: parent.left
-                anchors.leftMargin: wodepage.width/50
-                anchors.top: parent.top
-                anchors.topMargin: wodepage.height/40
-                height: wodepage.height*3/50
-                width: wodepage.width*3/40
-                Image {
-                    anchors.fill: parent
-                    source: "qrc:/Images/common/back.png"
-                }
-                onClicked:{
-                    wodepage.clear();
-                }
-            }
-
-            Setting{
-                anchors.top: parent.top
-                anchors.topMargin: 40
-                anchors.right: parent.right
-                anchors.rightMargin: 0
-                anchors.left: parent.left
-                anchors.leftMargin: 0
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 0
-            }
-        }
+        Setting{}
     }
 }
 
