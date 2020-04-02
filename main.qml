@@ -137,9 +137,6 @@ ApplicationWindow {
         height: 0.08*rootwindow.height
         width: rootwindow.width
 
-
-
-
         currentIndex: swipeview.currentIndex
         Component.onCompleted: {
             myModel.append({ "modelText": "首页", "modelColor": "#000000", "modelColorG": "#1296db", "modelSrc": "qrc:/Images/guide/homepage.png", "modelSrcG": "qrc:/Images/guide/homepage_after.png"})
