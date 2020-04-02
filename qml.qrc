@@ -115,5 +115,6 @@
         <file>Images/shelf/background.jpg</file>
         <file>Item/homepage/GridBookModel.qml</file>
         <file>Images/my/mynotes/mynote.png</file>
+        <file>View/BookView.qml</file>
     </qresource>
 </RCC>

@@ -28,7 +28,7 @@ Rectangle{
             anchors.left: parent.left;
             anchors.margins: 2
             id: read
-            text:qsTr(Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).chartAt(Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).currentChart).name);
+            text:qsTr(Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).chartAt(Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).currentChart).name)
             font.pixelSize:10
             color: Settings.bookSetting.font_Color
         }
