@@ -18,12 +18,11 @@ ApplicationWindow {
     height: 600
     title: qsTr("书客")
 
-
     SwipeView {
         id: swipeview
-        height: rootwindow.height - bar.height
+        height: rootwindow.height - basebar.height
         width: parent.width
-        currentIndex: bar.currentIndex
+        currentIndex: basebar.currentIndex
 
         //首页
         HomeStack{}
@@ -35,6 +34,14 @@ ApplicationWindow {
         Rectangle{
             id:bookshelf
             color: "#CCCCCC"
+            Image {
+                    id: rocket
+                    fillMode: Image.TileHorizontally
+//                    smooth: true
+                    width: rootwindow.width
+                    source: 'qrc:/Images/shelf/background.jpg'
+            }
+
             TopBars{
                 id: topBars
                 height: 0.07*rootwindow.height
@@ -76,7 +83,7 @@ ApplicationWindow {
                 width: parent.width;
                 height: parent.height;
                 cellWidth: 1/3*rootwindow.width;
-                cellHeight: 1/3*(rootwindow.height-bar.height);
+                cellHeight: 1/3*(rootwindow.height-basebar.height);
 
                 model: Settings.bookShelf.books;
                 delegate:  Book_ShelfItem{
@@ -86,10 +93,10 @@ ApplicationWindow {
                         read.visible=true;
                         //顶、底部导航隐藏
                         topBars.visible=false;
-                        bar.visible=false;
+                        basebar.visible=false;
                         //界面高度增加
                         swipeview.height=rootwindow.height;
-                        //解除禁止滑动
+                        //禁止滑动
                         swipeview.interactive=false;
                         Settings.bookShelf.currentBook=index;
                     }
@@ -119,13 +126,13 @@ ApplicationWindow {
 //                anchors.top: gridviewrec.bottom
         width:rootwindow.width //长
         height:1  //高
-        anchors.bottom: bar.top
+        anchors.bottom: basebar.top
         color:"#e6e6e6" //颜色
     }
 
 
     footer: BaseTabBar{
-        id: bar
+        id: basebar
 //        tbheight: 0.08*rootwindow.height
         height: 0.08*rootwindow.height
         width: rootwindow.width

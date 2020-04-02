@@ -21,6 +21,9 @@ Item {
                     onClicked:{
                         console.log(index)
                         wrapper.GridView.view.currentIndex = index
+                        basebar.visible = false
+                        //禁止滑动
+                        swipeview.interactive=false;
                         load_page(index)
                     }
                 }
@@ -72,7 +75,7 @@ Item {
              cellHeight: 1/2*gridrec.height
 
 
-             model: GridBook {}
+             model: GridBookModel {}
              delegate: booksortDelegate
 //             highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
              focus: true
