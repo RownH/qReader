@@ -116,5 +116,7 @@
         <file>Item/homepage/GridBookModel.qml</file>
         <file>Images/my/mynotes/mynote.png</file>
         <file>View/BookView.qml</file>
+        <file>book/help/1.text.txt</file>
+        <file>book/help/2.text.txt</file>
     </qresource>
 </RCC>

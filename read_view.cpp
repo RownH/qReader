@@ -74,7 +74,7 @@ void Read_View::loadDir(QString path)
         return ;
     }
 
-    for (unsigned i=2;i<Dir.count();i++) {
+    for (unsigned i=0;i<Dir.count();i++) {
         loadBook(Dir.absolutePath()+"/"+Dir[i]+"/");
 //        qDebug() << Dir[i];
     }
@@ -88,7 +88,7 @@ void Read_View::loadBook(QString path)
     Reader_Book *temBook=new Reader_Book;
 //    qDebug() << Dir.count();
 //    qDebug() << Dir[2];
-    for (unsigned i=2;i<Dir.count();i++) {
+    for (unsigned i=0;i<Dir.count();i++) {
           temName=Dir.absolutePath()+"/"+Dir[i]; //读取章节
 //          qDebug() << temName;
             // 问题？读取时只从文件名开头数字最小的开始读取，如开头为20和100，会先读取100
