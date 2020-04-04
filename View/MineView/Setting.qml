@@ -1,8 +1,51 @@
 import QtQuick 2.0
+import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.0
+import "../"
 
-Rectangle{
+StackView{
     id:shezhi
+    anchors.fill: parent
+
+    Rectangle{
+        id: rectangle4
+        anchors.fill: parent
+        MouseArea{
+            anchors.fill: parent
+        }
+        Rectangle{
+            height: 50
+            anchors.top: parent.top
+            anchors.topMargin: 0
+            anchors.left: parent.left
+            anchors.leftMargin: 0
+            anchors.right: parent.right
+            anchors.rightMargin: 0
+            Text {
+                width: 30
+                height: 26
+                text: qsTr("设置")
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Button {
+                anchors.left: parent.left
+                anchors.leftMargin: wodepage.width/50
+                anchors.top: parent.top
+                anchors.topMargin: wodepage.width/50
+                height: wodepage.width*3/40
+                width: wodepage.width*3/40
+                Image {
+                    anchors.fill: parent
+                    source: "qrc:/Images/common/back.png"
+                }
+                onClicked:{
+                    MineView.interactive=true
+                    basebar.visible=true
+                    wodepage.clear();
+                }
+            }
+        }
 
     Rectangle {
         id: rectangle
@@ -15,7 +58,7 @@ Rectangle{
         anchors.left: parent.left
         anchors.leftMargin: 0
         anchors.top: parent.top
-        anchors.topMargin: 0
+        anchors.topMargin: 50
         Layout.preferredHeight: 42
         Layout.preferredWidth: 200
 
@@ -161,6 +204,7 @@ Rectangle{
             id: mouseArea3
             anchors.fill: parent
         }
+    }
     }
 
 

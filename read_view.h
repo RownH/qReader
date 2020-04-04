@@ -31,7 +31,12 @@ public:
     void sorted();
     int currentBook();
     void setCurrentBook(int index);
+<<<<<<< HEAD
     void loadDir(QString path="/run/media/root/759b8514-9f40-4637-bd8f-4200833df628/reader/qReader/book/");
+=======
+    void loadDir(QString path=":/book/");
+//    void loadDir(QString path="./book/");
+>>>>>>> a
     void loadBook(QString path);
     static void appendBooks(QQmlListProperty<Reader_Book>*,Reader_Book *chapter);
     static int booksCount(QQmlListProperty<Reader_Book>*);

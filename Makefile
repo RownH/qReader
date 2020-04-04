@@ -14,13 +14,13 @@ EQ            = =
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
+DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_SQL_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
 CFLAGS        = -fno-keep-inline-dllexport -g -Wall -Wextra -Wextra $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -g -std=gnu++11 -Wall -Wextra -Wextra -fexceptions -mthreads $(DEFINES)
-INCPATH       = -I. -IC:\Qt\Qt5.14.0\5.14.0\mingw73_32\include -IC:\Qt\Qt5.14.0\5.14.0\mingw73_32\include\QtQuick -IC:\Qt\Qt5.14.0\5.14.0\mingw73_32\include\QtGui -IC:\Qt\Qt5.14.0\5.14.0\mingw73_32\include\QtANGLE -IC:\Qt\Qt5.14.0\5.14.0\mingw73_32\include\QtQmlModels -IC:\Qt\Qt5.14.0\5.14.0\mingw73_32\include\QtQml -IC:\Qt\Qt5.14.0\5.14.0\mingw73_32\include\QtNetwork -IC:\Qt\Qt5.14.0\5.14.0\mingw73_32\include\QtCore -I. -IC:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\win32-g++ 
+INCPATH       = -I. -IC:\Qt\Qt5.14.0\5.14.0\mingw73_32\include -IC:\Qt\Qt5.14.0\5.14.0\mingw73_32\include\QtQuick -IC:\Qt\Qt5.14.0\5.14.0\mingw73_32\include\QtGui -IC:\Qt\Qt5.14.0\5.14.0\mingw73_32\include\QtANGLE -IC:\Qt\Qt5.14.0\5.14.0\mingw73_32\include\QtQmlModels -IC:\Qt\Qt5.14.0\5.14.0\mingw73_32\include\QtQml -IC:\Qt\Qt5.14.0\5.14.0\mingw73_32\include\QtNetwork -IC:\Qt\Qt5.14.0\5.14.0\mingw73_32\include\QtSql -IC:\Qt\Qt5.14.0\5.14.0\mingw73_32\include\QtCore -I. -IC:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-subsystem,windows -mthreads
-LIBS        =        C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\libQt5Quick.a C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\libQt5Gui.a C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\libQt5QmlModels.a C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\libQt5Qml.a C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\libQt5Network.a C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\libQt5Core.a  -lmingw32 C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\libqtmain.a -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.7.25-win32\lib -LC:\Utils\postgresql\pgsql\lib -lshell32 
+LIBS        =        C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\libQt5Quick.a C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\libQt5Gui.a C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\libQt5QmlModels.a C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\libQt5Qml.a C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\libQt5Network.a C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\libQt5Sql.a C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\libQt5Core.a  -lmingw32 C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\libqtmain.a -LC:\openssl\lib -LC:\Utils\my_sql\mysql-5.7.25-win32\lib -LC:\Utils\postgresql\pgsql\lib -lshell32 
 QMAKE         = C:\Qt\Qt5.14.0\5.14.0\mingw73_32\bin\qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
@@ -52,28 +52,13 @@ OBJECTS_DIR   = .
 ####### Files
 
 SOURCES       = Book_chapter.cpp \
-		Globel_Object_qml.cpp \
-		Item_BookItem_qml.cpp \
-		Item_Book_ShelfItem_qml.cpp \
-		Item_ListItem_qml.cpp \
-		Item_SettingButton1_qml.cpp \
-		Item_SettingButton2_qml.cpp \
-		Item_SettingButton3_qml.cpp \
-		Item_SettingButton_qml.cpp \
-		Item_testItem_qml.cpp \
-		Popup_BrightNess_qml.cpp \
-		Popup_PopupCatalog_qml.cpp \
-		Popup_SettingBottom_qml.cpp \
 		Reader_book.cpp \
-		View_CataBottom_qml.cpp \
-		View_ReaderView_qml.cpp \
 		background_setting.cpp \
 		book_settings.cpp \
 		curpage_setting.cpp \
 		datemodel.cpp \
 		font_setter.cpp \
 		main.cpp \
-		main_qml.cpp \
 		read_view.cpp \
 		theme_setting.cpp qrc_qml.cpp \
 		moc_Book_chapter.cpp \
@@ -82,28 +67,13 @@ SOURCES       = Book_chapter.cpp \
 		moc_datemodel.cpp \
 		moc_read_view.cpp
 OBJECTS       = Book_chapter.o \
-		Globel_Object_qml.o \
-		Item_BookItem_qml.o \
-		Item_Book_ShelfItem_qml.o \
-		Item_ListItem_qml.o \
-		Item_SettingButton1_qml.o \
-		Item_SettingButton2_qml.o \
-		Item_SettingButton3_qml.o \
-		Item_SettingButton_qml.o \
-		Item_testItem_qml.o \
-		Popup_BrightNess_qml.o \
-		Popup_PopupCatalog_qml.o \
-		Popup_SettingBottom_qml.o \
 		Reader_book.o \
-		View_CataBottom_qml.o \
-		View_ReaderView_qml.o \
 		background_setting.o \
 		book_settings.o \
 		curpage_setting.o \
 		datemodel.o \
 		font_setter.o \
 		main.o \
-		main_qml.o \
 		read_view.o \
 		theme_setting.o \
 		qrc_qml.o \
@@ -114,40 +84,22 @@ OBJECTS       = Book_chapter.o \
 		moc_read_view.o
 
 DIST          = Item/BookItem.qml \
-		Item/ListItem.qml \
-		common/IconButton.qml \
-		common/PaperRipple.qml Book_chapter.h \
+		Item/ListItem.qml Book_chapter.h \
 		Reader_book.h \
 		background_setting.h \
 		book_settings.h \
 		curpage_setting.h \
 		datemodel.h \
 		font_setter.h \
-		moc_predefs.h \
 		read_view.h \
 		theme_setting.h Book_chapter.cpp \
-		Globel_Object_qml.cpp \
-		Item_BookItem_qml.cpp \
-		Item_Book_ShelfItem_qml.cpp \
-		Item_ListItem_qml.cpp \
-		Item_SettingButton1_qml.cpp \
-		Item_SettingButton2_qml.cpp \
-		Item_SettingButton3_qml.cpp \
-		Item_SettingButton_qml.cpp \
-		Item_testItem_qml.cpp \
-		Popup_BrightNess_qml.cpp \
-		Popup_PopupCatalog_qml.cpp \
-		Popup_SettingBottom_qml.cpp \
 		Reader_book.cpp \
-		View_CataBottom_qml.cpp \
-		View_ReaderView_qml.cpp \
 		background_setting.cpp \
 		book_settings.cpp \
 		curpage_setting.cpp \
 		datemodel.cpp \
 		font_setter.cpp \
 		main.cpp \
-		main_qml.cpp \
 		read_view.cpp \
 		theme_setting.cpp
 QMAKE_TARGET  = Reader
@@ -160,7 +112,7 @@ DESTDIR_TARGET = Reader.exe
 first: all
 all: Makefile  Reader.exe
 
-Reader.exe: C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/libQt5Quick.a C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/libQt5Gui.a C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/libQt5QmlModels.a C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/libQt5Qml.a C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/libQt5Network.a C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/libQt5Core.a C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/libqtmain.a $(OBJECTS) 
+Reader.exe: C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/libQt5Quick.a C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/libQt5Gui.a C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/libQt5QmlModels.a C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/libQt5Qml.a C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/libQt5Network.a C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/libQt5Sql.a C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/libQt5Core.a C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/libqtmain.a $(OBJECTS) 
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) @object_script.Reader  $(LIBS)
 
 Makefile: Reader.pro C:/Qt/Qt5.14.0/5.14.0/mingw73_32/mkspecs/win32-g++/qmake.conf C:/Qt/Qt5.14.0/5.14.0/mingw73_32/mkspecs/features/spec_pre.prf \
@@ -368,6 +320,7 @@ Makefile: Reader.pro C:/Qt/Qt5.14.0/5.14.0/mingw73_32/mkspecs/win32-g++/qmake.co
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/Qt5QmlModels.prl \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/Qt5Qml.prl \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/Qt5Network.prl \
+		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/Qt5Sql.prl \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/Qt5Core.prl \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/qtmain.prl
 	$(QMAKE) -o Makefile Reader.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -576,6 +529,7 @@ C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/Qt5Gui.prl:
 C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/Qt5QmlModels.prl:
 C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/Qt5Qml.prl:
 C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/Qt5Network.prl:
+C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/Qt5Sql.prl:
 C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/Qt5Core.prl:
 C:/Qt/Qt5.14.0/5.14.0/mingw73_32/lib/qtmain.prl:
 qmake: FORCE
@@ -584,10 +538,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) Reader.zip $(SOURCES) $(DIST) Reader.pro C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\spec_pre.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\qdevice.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\device_config.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\common\sanitize.conf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\common\gcc-base.conf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\common\g++-base.conf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\common\angle.conf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\common\windows-vulkan.conf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\common\g++-win32.conf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\common\windows-desktop.conf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\qconfig.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3danimation.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3drender.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_axbase.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_axserver.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_bodymovin_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_charts.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_charts_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_core.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_core_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_datavisualization.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_datavisualization_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_dbus.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_designer.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_edid_support_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_egl_support_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_gamepad.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_gui.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_help.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_help_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_location.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_location_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_network.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_network_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_networkauth.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_networkauth_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_nfc.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_opengl.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_positioning.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_purchasing.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_purchasing_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qml.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick3d.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick3d_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick3dassetimport.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick3dassetimport_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick3drender.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick3drender_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick3druntimerender.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick3druntimerender_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick3dutils.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick3dutils_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_remoteobjects.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_repparser.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_repparser_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_script.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_script_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_scripttools.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_scripttools_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_scxml.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_sensors.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_serialport.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_sql.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_svg.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_testlib.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_theme_support_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_uitools.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_virtualkeyboard.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_virtualkeyboard_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_websockets.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_widgets.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_winextras.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_xml.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\qt_functions.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\qt_config.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\win32-g++\qmake.conf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\exclusive_builds.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\toolchain.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\default_pre.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\win32\default_pre.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\resolve_config.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\default_post.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\qml_debug.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\precompile_header.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\warn_on.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\qt.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\resources_functions.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\resources.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\moc.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\win32\opengl.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\qmake_use.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\file_copies.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\win32\windows.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\testcase_targets.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\exceptions.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\yacc.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\lex.prf Reader.pro qml.qrc C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\Qt5Quick.prl C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\Qt5Gui.prl C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\Qt5QmlModels.prl C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\Qt5Qml.prl C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\Qt5Network.prl C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\Qt5Core.prl C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\qtmain.prl   qml.qrc C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\data\dummy.cpp Book_chapter.h Reader_book.h background_setting.h book_settings.h curpage_setting.h datemodel.h font_setter.h moc_predefs.h read_view.h theme_setting.h  Book_chapter.cpp Globel_Object_qml.cpp Item_BookItem_qml.cpp Item_Book_ShelfItem_qml.cpp Item_ListItem_qml.cpp Item_SettingButton1_qml.cpp Item_SettingButton2_qml.cpp Item_SettingButton3_qml.cpp Item_SettingButton_qml.cpp Item_testItem_qml.cpp Popup_BrightNess_qml.cpp Popup_PopupCatalog_qml.cpp Popup_SettingBottom_qml.cpp Reader_book.cpp View_CataBottom_qml.cpp View_ReaderView_qml.cpp background_setting.cpp book_settings.cpp curpage_setting.cpp datemodel.cpp font_setter.cpp main.cpp main_qml.cpp read_view.cpp theme_setting.cpp    
+	$(ZIP) Reader.zip $(SOURCES) $(DIST) Reader.pro C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\spec_pre.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\qdevice.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\device_config.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\common\sanitize.conf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\common\gcc-base.conf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\common\g++-base.conf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\common\angle.conf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\common\windows-vulkan.conf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\common\g++-win32.conf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\common\windows-desktop.conf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\qconfig.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3danimation.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3drender.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_axbase.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_axserver.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_bodymovin_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_charts.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_charts_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_core.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_core_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_datavisualization.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_datavisualization_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_dbus.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_designer.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_edid_support_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_egl_support_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_gamepad.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_gui.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_help.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_help_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_location.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_location_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_network.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_network_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_networkauth.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_networkauth_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_nfc.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_opengl.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_positioning.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_purchasing.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_purchasing_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qml.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick3d.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick3d_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick3dassetimport.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick3dassetimport_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick3drender.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick3drender_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick3druntimerender.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick3druntimerender_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick3dutils.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick3dutils_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_remoteobjects.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_repparser.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_repparser_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_script.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_script_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_scripttools.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_scripttools_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_scxml.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_sensors.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_serialport.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_sql.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_svg.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_testlib.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_theme_support_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_uitools.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_virtualkeyboard.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_virtualkeyboard_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_websockets.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_widgets.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_winextras.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_xml.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\qt_functions.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\qt_config.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\win32-g++\qmake.conf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\exclusive_builds.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\toolchain.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\default_pre.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\win32\default_pre.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\resolve_config.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\default_post.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\qml_debug.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\precompile_header.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\warn_on.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\qt.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\resources_functions.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\resources.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\moc.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\win32\opengl.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\qmake_use.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\file_copies.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\win32\windows.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\testcase_targets.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\exceptions.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\yacc.prf C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\lex.prf Reader.pro qml.qrc C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\Qt5Quick.prl C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\Qt5Gui.prl C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\Qt5QmlModels.prl C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\Qt5Qml.prl C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\Qt5Network.prl C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\Qt5Sql.prl C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\Qt5Core.prl C:\Qt\Qt5.14.0\5.14.0\mingw73_32\lib\qtmain.prl   qml.qrc C:\Qt\Qt5.14.0\5.14.0\mingw73_32\mkspecs\features\data\dummy.cpp Book_chapter.h Reader_book.h background_setting.h book_settings.h curpage_setting.h datemodel.h font_setter.h read_view.h theme_setting.h  Book_chapter.cpp Reader_book.cpp background_setting.cpp book_settings.cpp curpage_setting.cpp datemodel.cpp font_setter.cpp main.cpp read_view.cpp theme_setting.cpp    
 
 clean: compiler_clean 
-	-$(DEL_FILE) Book_chapter.o Globel_Object_qml.o Item_BookItem_qml.o Item_Book_ShelfItem_qml.o Item_ListItem_qml.o Item_SettingButton1_qml.o Item_SettingButton2_qml.o Item_SettingButton3_qml.o Item_SettingButton_qml.o Item_testItem_qml.o Popup_BrightNess_qml.o Popup_PopupCatalog_qml.o Popup_SettingBottom_qml.o Reader_book.o View_CataBottom_qml.o View_ReaderView_qml.o background_setting.o book_settings.o curpage_setting.o datemodel.o font_setter.o main.o main_qml.o read_view.o theme_setting.o qrc_qml.o moc_Book_chapter.o moc_Reader_book.o moc_book_settings.o moc_datemodel.o moc_read_view.o
+	-$(DEL_FILE) Book_chapter.o Reader_book.o background_setting.o book_settings.o curpage_setting.o datemodel.o font_setter.o main.o read_view.o theme_setting.o qrc_qml.o moc_Book_chapter.o moc_Reader_book.o moc_book_settings.o moc_datemodel.o moc_read_view.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -615,16 +569,18 @@ qrc_qml.cpp: qml.qrc \
 		datemodel.h \
 		Globel_Object.qml \
 		main.qml \
+		book/help/1.text.txt \
+		book/help/2.text.txt \
 		Images/my/mybooks.png \
 		Images/my/myinfo.png \
 		Images/my/help_big.png \
-		Images/my/help.png \
 		Images/my/headimg.png \
 		Images/my/sign.png \
 		Images/my/setting.png \
 		Images/my/myaccount.png \
 		Images/my/note.png \
 		Images/my/ring.png \
+		Images/my/mynotes/mynote.png \
 		Images/guide/analogy_after.png \
 		Images/guide/analogy.png \
 		Images/guide/me.png \
@@ -640,6 +596,11 @@ qrc_qml.cpp: qml.qrc \
 		Images/homepage/gridimg/shi.png \
 		Images/homepage/gridimg/yan.png \
 		Images/homepage/gridimg/wen.png \
+		Images/homepage/sortimg/xiyouji.jpg \
+		Images/homepage/sortimg/gantie.jpg \
+		Images/homepage/sortimg/book.jpg \
+		Images/homepage/sortimg/hong.jpg \
+		Images/homepage/sortimg/shuihu.jpg \
 		Images/homepage/switchimg/learn.jpg \
 		Images/homepage/switchimg/deeplearning.png \
 		Images/homepage/switchimg/android.jpg \
@@ -674,6 +635,7 @@ qrc_qml.cpp: qml.qrc \
 		Images/shelf/search.png \
 		Images/shelf/wifi.png \
 		Images/shelf/import.png \
+		Images/shelf/background.jpg \
 		Images/shelf/folder.png \
 		Images/analyze/draw_words.png \
 		Images/analyze/men_relationship.png \
@@ -684,6 +646,7 @@ qrc_qml.cpp: qml.qrc \
 		common/IconButton.qml \
 		View/HomeStack.qml \
 		View/HomeView.qml \
+		View/BookView.qml \
 		View/savejson.js \
 		View/AnalyzeView.qml \
 		View/MineView.qml \
@@ -697,10 +660,10 @@ qrc_qml.cpp: qml.qrc \
 		View/MineView/MyNotes.qml \
 		View/readview/ReaderView.qml \
 		View/readview/CataBottom.qml \
-		View/HomeView/SortBooks.qml \
 		View/HomeView/GridViews.qml \
 		View/HomeView/VideoView.qml \
 		View/HomeView/CircleView.qml \
+		View/HomeView/SortView.qml \
 		Popup/BrightNess.qml \
 		Popup/SettingBottom.qml \
 		Popup/PopupCatalog.qml \
@@ -708,7 +671,8 @@ qrc_qml.cpp: qml.qrc \
 		Item/BaseTabBar.qml \
 		Item/catalog.png \
 		Item/homepage/SearchBar.qml \
-		Item/homepage/GridBook.qml \
+		Item/homepage/GridBookModel.qml \
+		Item/homepage/ListBookModel.qml \
 		Item/bookshelf/Book_ShelfItem.qml \
 		Item/bookshelf/AddButton.qml \
 		Item/bookshelf/readview/ListItem.qml \
@@ -1237,7 +1201,7 @@ moc_Book_chapter.cpp: Book_chapter.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/qobject_impl.h \
 		moc_predefs.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/bin/moc.exe
-	C:\Qt\Qt5.14.0\5.14.0\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/rownh/Documents/GitHub/qReader/moc_predefs.h -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/mkspecs/win32-g++ -IC:/Users/rownh/Documents/GitHub/qReader -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQuick -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtGui -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtANGLE -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQmlModels -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQml -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtNetwork -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.0/Tools/mingw730_32/i686-w64-mingw32/include Book_chapter.h -o moc_Book_chapter.cpp
+	C:\Qt\Qt5.14.0\5.14.0\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/rownh/Documents/GitHub/qReader/moc_predefs.h -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/mkspecs/win32-g++ -IC:/Users/rownh/Documents/GitHub/qReader -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQuick -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtGui -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtANGLE -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQmlModels -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQml -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtNetwork -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtSql -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.0/Tools/mingw730_32/i686-w64-mingw32/include Book_chapter.h -o moc_Book_chapter.cpp
 
 moc_Reader_book.cpp: Reader_book.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/QObject \
@@ -1316,7 +1280,7 @@ moc_Reader_book.cpp: Reader_book.h \
 		Book_chapter.h \
 		moc_predefs.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/bin/moc.exe
-	C:\Qt\Qt5.14.0\5.14.0\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/rownh/Documents/GitHub/qReader/moc_predefs.h -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/mkspecs/win32-g++ -IC:/Users/rownh/Documents/GitHub/qReader -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQuick -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtGui -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtANGLE -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQmlModels -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQml -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtNetwork -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.0/Tools/mingw730_32/i686-w64-mingw32/include Reader_book.h -o moc_Reader_book.cpp
+	C:\Qt\Qt5.14.0\5.14.0\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/rownh/Documents/GitHub/qReader/moc_predefs.h -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/mkspecs/win32-g++ -IC:/Users/rownh/Documents/GitHub/qReader -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQuick -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtGui -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtANGLE -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQmlModels -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQml -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtNetwork -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtSql -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.0/Tools/mingw730_32/i686-w64-mingw32/include Reader_book.h -o moc_Reader_book.cpp
 
 moc_book_settings.cpp: book_settings.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/QObject \
@@ -1393,7 +1357,7 @@ moc_book_settings.cpp: book_settings.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/qsharedpointer_impl.h \
 		moc_predefs.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/bin/moc.exe
-	C:\Qt\Qt5.14.0\5.14.0\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/rownh/Documents/GitHub/qReader/moc_predefs.h -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/mkspecs/win32-g++ -IC:/Users/rownh/Documents/GitHub/qReader -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQuick -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtGui -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtANGLE -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQmlModels -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQml -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtNetwork -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.0/Tools/mingw730_32/i686-w64-mingw32/include book_settings.h -o moc_book_settings.cpp
+	C:\Qt\Qt5.14.0\5.14.0\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/rownh/Documents/GitHub/qReader/moc_predefs.h -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/mkspecs/win32-g++ -IC:/Users/rownh/Documents/GitHub/qReader -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQuick -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtGui -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtANGLE -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQmlModels -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQml -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtNetwork -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtSql -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.0/Tools/mingw730_32/i686-w64-mingw32/include book_settings.h -o moc_book_settings.cpp
 
 moc_datemodel.cpp: datemodel.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/QAbstractListModel \
@@ -1465,7 +1429,7 @@ moc_datemodel.cpp: datemodel.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/QString \
 		moc_predefs.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/bin/moc.exe
-	C:\Qt\Qt5.14.0\5.14.0\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/rownh/Documents/GitHub/qReader/moc_predefs.h -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/mkspecs/win32-g++ -IC:/Users/rownh/Documents/GitHub/qReader -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQuick -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtGui -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtANGLE -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQmlModels -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQml -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtNetwork -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.0/Tools/mingw730_32/i686-w64-mingw32/include datemodel.h -o moc_datemodel.cpp
+	C:\Qt\Qt5.14.0\5.14.0\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/rownh/Documents/GitHub/qReader/moc_predefs.h -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/mkspecs/win32-g++ -IC:/Users/rownh/Documents/GitHub/qReader -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQuick -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtGui -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtANGLE -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQmlModels -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQml -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtNetwork -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtSql -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.0/Tools/mingw730_32/i686-w64-mingw32/include datemodel.h -o moc_datemodel.cpp
 
 moc_read_view.cpp: read_view.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/QObject \
@@ -1545,7 +1509,7 @@ moc_read_view.cpp: read_view.h \
 		Book_chapter.h \
 		moc_predefs.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/bin/moc.exe
-	C:\Qt\Qt5.14.0\5.14.0\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/rownh/Documents/GitHub/qReader/moc_predefs.h -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/mkspecs/win32-g++ -IC:/Users/rownh/Documents/GitHub/qReader -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQuick -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtGui -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtANGLE -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQmlModels -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQml -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtNetwork -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.0/Tools/mingw730_32/i686-w64-mingw32/include read_view.h -o moc_read_view.cpp
+	C:\Qt\Qt5.14.0\5.14.0\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/rownh/Documents/GitHub/qReader/moc_predefs.h -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/mkspecs/win32-g++ -IC:/Users/rownh/Documents/GitHub/qReader -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQuick -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtGui -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtANGLE -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQmlModels -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtQml -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtNetwork -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtSql -IC:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.0/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.0/Tools/mingw730_32/i686-w64-mingw32/include read_view.h -o moc_read_view.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1634,44 +1598,9 @@ Book_chapter.o: Book_chapter.cpp Book_chapter.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/qshareddata.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/qsharedpointer_impl.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/QTextCodec \
-		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/qtextcodec.h
+		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/qtextcodec.h \
+		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Book_chapter.o Book_chapter.cpp
-
-Globel_Object_qml.o: Globel_Object_qml.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Globel_Object_qml.o Globel_Object_qml.cpp
-
-Item_BookItem_qml.o: Item_BookItem_qml.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Item_BookItem_qml.o Item_BookItem_qml.cpp
-
-Item_Book_ShelfItem_qml.o: Item_Book_ShelfItem_qml.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Item_Book_ShelfItem_qml.o Item_Book_ShelfItem_qml.cpp
-
-Item_ListItem_qml.o: Item_ListItem_qml.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Item_ListItem_qml.o Item_ListItem_qml.cpp
-
-Item_SettingButton1_qml.o: Item_SettingButton1_qml.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Item_SettingButton1_qml.o Item_SettingButton1_qml.cpp
-
-Item_SettingButton2_qml.o: Item_SettingButton2_qml.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Item_SettingButton2_qml.o Item_SettingButton2_qml.cpp
-
-Item_SettingButton3_qml.o: Item_SettingButton3_qml.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Item_SettingButton3_qml.o Item_SettingButton3_qml.cpp
-
-Item_SettingButton_qml.o: Item_SettingButton_qml.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Item_SettingButton_qml.o Item_SettingButton_qml.cpp
-
-Item_testItem_qml.o: Item_testItem_qml.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Item_testItem_qml.o Item_testItem_qml.cpp
-
-Popup_BrightNess_qml.o: Popup_BrightNess_qml.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Popup_BrightNess_qml.o Popup_BrightNess_qml.cpp
-
-Popup_PopupCatalog_qml.o: Popup_PopupCatalog_qml.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Popup_PopupCatalog_qml.o Popup_PopupCatalog_qml.cpp
-
-Popup_SettingBottom_qml.o: Popup_SettingBottom_qml.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Popup_SettingBottom_qml.o Popup_SettingBottom_qml.cpp
 
 Reader_book.o: Reader_book.cpp Reader_book.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/QObject \
@@ -1756,12 +1685,6 @@ Reader_book.o: Reader_book.cpp Reader_book.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/QTextStream \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Reader_book.o Reader_book.cpp
-
-View_CataBottom_qml.o: View_CataBottom_qml.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o View_CataBottom_qml.o View_CataBottom_qml.cpp
-
-View_ReaderView_qml.o: View_ReaderView_qml.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o View_ReaderView_qml.o View_ReaderView_qml.cpp
 
 background_setting.o: background_setting.cpp background_setting.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/QList \
@@ -2363,9 +2286,6 @@ main.o: main.cpp C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtGui/QGuiApplication 
 		read_view.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
-main_qml.o: main_qml.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main_qml.o main_qml.cpp
-
 read_view.o: read_view.cpp read_view.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/QObject \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/qobject.h \
@@ -2449,7 +2369,11 @@ read_view.o: read_view.cpp read_view.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/QDebug \
 		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/QTextCodec \
-		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/qtextcodec.h
+		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtCore/qtextcodec.h \
+		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtSql/QSqlDatabase \
+		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtSql/qsqldatabase.h \
+		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtSql/qtsqlglobal.h \
+		C:/Qt/Qt5.14.0/5.14.0/mingw73_32/include/QtSql/qtsql-config.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o read_view.o read_view.cpp
 
 theme_setting.o: theme_setting.cpp theme_setting.h \
