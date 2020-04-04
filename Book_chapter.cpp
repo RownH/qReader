@@ -2,6 +2,7 @@
 #include<QFile>
 #include<QTextStream>
 #include<QTextCodec>
+#include <QDebug>
 Book_chapter::Book_chapter(QObject *parent): QObject(parent)
 {
 }
@@ -26,6 +27,7 @@ QString Book_chapter::source() const
 QString Book_chapter::str()
 {
     if(m_str.isEmpty()){
+        qDebug() << m_source;
         QFile f(m_source);
           QString str;
         if(!f.open(QIODevice::ReadOnly| QIODevice::Text))

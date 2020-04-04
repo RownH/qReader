@@ -28,7 +28,7 @@ Rectangle{
             anchors.left: parent.left;
             anchors.margins: 2
             id: read
-            text:qsTr(Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).chartAt(Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).currentChart).name);
+            text:qsTr(Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).chartAt(Settings.bookShelf.booksAt(Settings.bookShelf.currentBook).currentChart).name)
             font.pixelSize:10
             color: Settings.bookSetting.font_Color
         }
@@ -201,8 +201,8 @@ Rectangle{
                             view.isSetting=0;
                             //当点击返回时，顶底部导航栏显示，swipeview滑动界面减去导航栏，并且swipeview可以滑动
                             topBars.visible=true;
-                            bar.visible=true;
-                            swipeview.height=rootwindow.height - bar.height;
+                            basebar.visible=true;
+                            swipeview.height=rootwindow.height - basebar.height;
                             swipeview.interactive=true;
                         }
                     }

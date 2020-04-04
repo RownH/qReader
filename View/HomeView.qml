@@ -29,7 +29,7 @@ Rectangle {
         id: contents
         anchors.fill: parent
         anchors.topMargin: searchBar.height
-        contentHeight: flow.height+bar.height
+        contentHeight: flow.height+basebar.height
         contentWidth: rootwindow.width
 //            clip: false
 

@@ -2,6 +2,7 @@
 #include<QDir>
 #include<QDebug>
 #include<QTextCodec>
+#include <QSqlDatabase>
 Read_View::Read_View(QObject *parent) : QObject(parent)
 {
        m_currentBook=0;
@@ -72,20 +73,26 @@ void Read_View::loadDir(QString path)
     if(!Dir.exists()){
         return ;
     }
+
     for (unsigned i=2;i<Dir.count();i++) {
         loadBook(Dir.absolutePath()+"/"+Dir[i]+"/");
+//        qDebug() << Dir[i];
     }
 }
 void Read_View::loadBook(QString path)
 {
     QDir Dir(path);
     if(!Dir.exists())return ;
-    QString temContent;
-    QString temName;
+    QString temContent; //章节内容
+    QString temName; //章节目录
     Reader_Book *temBook=new Reader_Book;
+//    qDebug() << Dir.count();
+//    qDebug() << Dir[2];
     for (unsigned i=2;i<Dir.count();i++) {
-          temName=Dir.absolutePath()+"/"+Dir[i];
-          Book_chapter *chapt=new Book_chapter(temName,Dir[i]);
+          temName=Dir.absolutePath()+"/"+Dir[i]; //读取章节
+//          qDebug() << temName;
+            // 问题？读取时只从文件名开头数字最小的开始读取，如开头为20和100，会先读取100
+          Book_chapter *chapt=new Book_chapter(temName,Dir[i]); //把每本小说的所有章节的所在目录和章节名字一起放入chapt中
           temBook->appendChart(chapt);
     }
     Book_shelf.append(temBook);

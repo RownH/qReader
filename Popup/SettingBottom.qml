@@ -29,7 +29,7 @@ Rectangle{
                     SettingButton1{
                         width: 80;
                         height: 30;
-                        buttonIconPath: "../Images/font_size_down.png"
+                        buttonIconPath: "../Images/readview/font_size_down.png"
                         buttonIconWidth: width/3
                         buttonIconHeight: height
                         MouseArea{
@@ -48,7 +48,7 @@ Rectangle{
                     SettingButton1{
                         width: 80;
                         height: 30;
-                        buttonIconPath: "../Images/font_size_up.png"
+                        buttonIconPath: "../Images/readview/font_size_up.png"
                         buttonIconWidth: width/3
                         buttonIconHeight: height
                         MouseArea{
@@ -78,7 +78,7 @@ Rectangle{
                     SettingButton1{
                         width: 50;
                         height: 30;
-                        buttonIconPath: "../Images/right_Alignment.png"
+                        buttonIconPath: "../Images/readview/right_Alignment.png"
                         border.color:  Settings.bookSetting.alignment_method===TextEdit.AlignRight?"red":"#eeeeee";
                         buttonIconWidth: width/2
                         buttonIconHeight: height
@@ -92,7 +92,7 @@ Rectangle{
                     SettingButton1{
                         width: 50;
                         height: 30;
-                        buttonIconPath: "../Images/right_Alignment1.png"
+                        buttonIconPath: "../Images/readview/right_Alignment1.png"
                         border.color:  Settings.bookSetting.alignment_method===TextEdit.AlignLeft?"red":"#eeeeee";
 
                         buttonIconWidth: width/2
@@ -107,7 +107,7 @@ Rectangle{
                     SettingButton1{
                         width: 50;
                         height: 30;
-                        buttonIconPath: "../Images/right_Alignment2.png"
+                        buttonIconPath: "../Images/readview/right_Alignment2.png"
                         border.color:  Settings.bookSetting.alignment_method===TextEdit.AlignHCenter?"red":"#eeeeee";
 
                         buttonIconWidth: width/2
@@ -122,7 +122,7 @@ Rectangle{
                     SettingButton1{
                         width: 50;
                         height: 30;
-                        buttonIconPath: "../Images/globalRegistration.png"
+                        buttonIconPath: "../Images/readview/globalRegistration.png"
                         border.color:  Settings.bookSetting.alignment_method===3?"red":"#eeeeee";
                         buttonIconWidth: width/2
                         buttonIconHeight: height
@@ -137,7 +137,7 @@ Rectangle{
                     SettingButton1{
                         width: 50;
                         height: 30;
-                        buttonIconPath: "../Images/verticalAlignment.png"
+                        buttonIconPath: "../Images/readview/verticalAlignment.png"
                         border.color:  Settings.bookSetting.alignment_method===5?"red":"#eeeeee";
                         buttonIconWidth: width/2
                         buttonIconHeight: height
@@ -152,7 +152,7 @@ Rectangle{
                         width: 30;
                         height: 30;
                         radius: 15
-                        buttonIconPath: "../Images/other.png"
+                        buttonIconPath: "../Images/readview/other.png"
                         buttonIconWidth: width/2
                         buttonIconHeight: height-5
                     }
@@ -221,7 +221,7 @@ Rectangle{
                         width: 30;
                         height: 30;
                         radius: 15
-                        buttonIconPath: "../Images/other.png"
+                        buttonIconPath: "../Images/readview/other.png"
                         buttonIconWidth: width/2
                         buttonIconHeight: height-5
                     }
@@ -268,21 +268,21 @@ Rectangle{
                         spacing: (root.width-30*3-2*Layout.leftMargin)*1.0/2.0
 
                         SettingButton{
-                            buttonIconPath: "../Images/autoChangePage.png"
+                            buttonIconPath: "../Images/readview/autoChangePage.png"
                             buttonBackColor : "transparent"
                             buttonText: qsTr("自动翻页")
                             width: 30;
                             height: 50;
                         }
                         SettingButton{
-                            buttonIconPath: "../Images/horzenScrenChange.png"
+                            buttonIconPath: "../Images/readview/horzenScrenChange.png"
                             buttonBackColor : "transparent"
                             buttonText: qsTr("横屏")
                             width: 30;
                             height: 50;
                         }
                         SettingButton{
-                            buttonIconPath: "../Images/fullChangePage.png"
+                            buttonIconPath: "../Images/readview/fullChangePage.png"
                             buttonBackColor : "transparent"
                             buttonText: qsTr("全屏翻页")
                             width: 30;
